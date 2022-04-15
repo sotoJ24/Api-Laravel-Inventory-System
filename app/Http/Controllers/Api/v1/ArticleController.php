@@ -16,11 +16,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        // $articles = Article::where('states',1)->orderBy('name', 'ASC')->get();
-        // return response()->json($articles, 200);
+
         $articles = DB::table('articles')
             ->join('unit_of_measures','articles.unitOfMeasure_id','=','unit_of_measures.id')
-            ->select('unit_of_measures.description','articles.barcode', 'articles.name', 'articles.purchasePrice','articles.salePrice','articles.stock','articles.minimumStock')
+            ->select('unit_of_measures.description','articles.id','articles.barcode', 'articles.name', 'articles.purchasePrice','articles.salePrice','articles.stock','articles.minimumStock')
             ->where('articles.states',1)->orderBy('name', 'ASC')
             ->get();
         return response()->json($articles,200);
@@ -74,15 +73,26 @@ class ArticleController extends Controller
     public function getArticleEdit($id){
         $code = DB::table('articles')
             ->join('unit_of_measures', 'articles.unitOfMeasure_id','=','unit_of_measures.id')
-            ->select('unit_of_measures.id as articleId','unit_of_measures.description','articles.id', 'articles.barcode',
-                    'articles.purchasePrice','articles.salePrice','articles.stock','articles.minimumStock')
+            ->select('unit_of_measures.id as unitIdInArticle','unit_of_measures.description','articles.id', 'articles.barcode',
+                    'articles.name','articles.purchasePrice','articles.salePrice','articles.stock','articles.minimumStock')
             ->where('articles.id',$id)
             ->get();
         return response()->json($code,200);
     }
     public function update(Request $request, Article $article)
     {
-        //
+
+        $request->validate([
+            'barcode' => 'required|string|max:50|unique:articles,id,'.$article->id,
+            'unitOfMeasure_id' => 'required|integer',
+            'name' => 'required|string|max:100',
+            'purchasePrice' => 'required|numeric',
+            'salePrice' => 'required|numeric',
+            'stock' => 'required|numeric',
+            'minimumStock' => 'required|numeric'
+        ]);
+        $article->update($request->all());
+        return response()->json($article,200);
     }
 
     /**
@@ -91,8 +101,11 @@ class ArticleController extends Controller
      * @param  \App\Models\Api\v1\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy(Request $request, $id)
     {
-        //
+        $changeStatus = Article::find($id);
+        $changeStatus->states = $request->states;
+        $changeStatus->save();
+        return response()->json($changeStatus, 200);
     }
 }
