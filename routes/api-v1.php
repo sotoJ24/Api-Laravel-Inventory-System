@@ -25,5 +25,7 @@ Route::get('/test', function(){
 
 // {{-- Articles Routes --}}\\
 Route::apiResource('articles', ArticleController::class)->names('api.v1.articles');
+Route::get('articlesEdit/{id}', [\App\Http\Controllers\Api\v1\ArticleController::class,'getArticleEdit'])->name('article.edit');
 //{{-- UnitOfMeasure Routes --}}\\
 Route::apiResource('unitofmeasures',UnitOfMeasureController::class)->names('api.v1.unitofmeasures');
+
