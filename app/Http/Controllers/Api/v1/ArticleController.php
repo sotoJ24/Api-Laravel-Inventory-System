@@ -101,6 +101,15 @@ class ArticleController extends Controller
      * @param  \App\Models\Api\v1\Article  $article
      * @return \Illuminate\Http\Response
      */
+    public function statesChange(Request $request, $id)
+    {
+
+        $changeStatus = Article::find($id);
+        $changeStatus->states = $request->states;
+        $changeStatus->save();
+        return response()->json($changeStatus, 200);
+    }
+
     public function destroy(Request $request, $id)
     {
         $changeStatus = Article::find($id);
