@@ -77,6 +77,7 @@ class ArticleController extends Controller
                     'articles.name','articles.purchasePrice','articles.salePrice','articles.stock','articles.minimumStock')
             ->where('articles.id',$id)
             ->get();
+            return $code;
         return response()->json($code,200);
     }
     public function update(Request $request, Article $article)
@@ -101,14 +102,13 @@ class ArticleController extends Controller
      * @param  \App\Models\Api\v1\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function statesChange(Request $request, $id)
-    {
-
-        $changeStatus = Article::find($id);
-        $changeStatus->states = $request->states;
-        $changeStatus->save();
-        return response()->json($changeStatus, 200);
-    }
+    // public function statesChange(Request $request, $id)
+    // {
+    //     $changeStatus = Article::find($id);
+    //     $changeStatus->states = $request->states;
+    //     $changeStatus->save();
+    //     return response()->json($changeStatus, 200);
+    // }
 
     public function destroy(Request $request, $id)
     {
