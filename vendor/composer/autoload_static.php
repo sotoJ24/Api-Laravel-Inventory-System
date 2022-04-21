@@ -549,6 +549,7 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'App\\Models\\Api\\v1\\Invoicing' => __DIR__ . '/../..' . '/app/Models/Api/v1/Invoicing.php',
         'App\\Models\\Api\\v1\\Reserved' => __DIR__ . '/../..' . '/app/Models/Api/v1/Reserved.php',
         'App\\Models\\Api\\v1\\Rol' => __DIR__ . '/../..' . '/app/Models/Api/v1/Rol.php',
+        'App\\Models\\Api\\v1\\Status' => __DIR__ . '/../..' . '/app/Models/Api/v1/Status.php',
         'App\\Models\\Api\\v1\\Supplier' => __DIR__ . '/../..' . '/app/Models/Api/v1/Supplier.php',
         'App\\Models\\Api\\v1\\UnitOfMeasure' => __DIR__ . '/../..' . '/app/Models/Api/v1/UnitOfMeasure.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',

@@ -39,6 +39,7 @@ return array(
     'App\\Models\\Api\\v1\\Invoicing' => $baseDir . '/app/Models/Api/v1/Invoicing.php',
     'App\\Models\\Api\\v1\\Reserved' => $baseDir . '/app/Models/Api/v1/Reserved.php',
     'App\\Models\\Api\\v1\\Rol' => $baseDir . '/app/Models/Api/v1/Rol.php',
+    'App\\Models\\Api\\v1\\Status' => $baseDir . '/app/Models/Api/v1/Status.php',
     'App\\Models\\Api\\v1\\Supplier' => $baseDir . '/app/Models/Api/v1/Supplier.php',
     'App\\Models\\Api\\v1\\UnitOfMeasure' => $baseDir . '/app/Models/Api/v1/UnitOfMeasure.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
