@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\ArticleController;
+use App\Http\Controllers\Api\v1\RootController;
 use App\Http\Controllers\Api\v1\UnitOfMeasureController;
 
 /*
@@ -31,3 +32,5 @@ Route::put('articlesDestroy/{id}', [\App\Http\Controllers\Api\v1\ArticleControll
 //{{-- UnitOfMeasure Routes --}}\\
 Route::apiResource('unitofmeasures',UnitOfMeasureController::class)->names('api.v1.unitofmeasures');
 
+//{{-- Super User Routes --}}\\
+Route::apiResource('roots', RootController::class)->names('api.v1.roots');
