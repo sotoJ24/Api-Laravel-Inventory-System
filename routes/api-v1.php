@@ -32,10 +32,7 @@ Route::put('articlesDestroy/{id}', [\App\Http\Controllers\Api\v1\ArticleControll
 
 //{{-- UnitOfMeasure Routes --}}\\
 Route::apiResource('unitofmeasures',UnitOfMeasureController::class)->names('api.v1.unitofmeasures');
-<<<<<<< HEAD
 Route::apiResource('business',BusinessController::class)->names('api.v1.business');
-=======
 
 //{{-- Super User Routes --}}\\
 Route::apiResource('roots', RootController::class)->names('api.v1.roots');
->>>>>>> cb2bf9297aae9dbd51f2720f6161947d6b151703
