@@ -550,7 +550,11 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'App\\Models\\Api\\v1\\Invoicing' => __DIR__ . '/../..' . '/app/Models/Api/v1/Invoicing.php',
         'App\\Models\\Api\\v1\\Reserved' => __DIR__ . '/../..' . '/app/Models/Api/v1/Reserved.php',
         'App\\Models\\Api\\v1\\Rol' => __DIR__ . '/../..' . '/app/Models/Api/v1/Rol.php',
+<<<<<<< HEAD
         'App\\Models\\Api\\v1\\Root' => __DIR__ . '/../..' . '/app/Models/Api/v1/Root.php',
+=======
+        'App\\Models\\Api\\v1\\Status' => __DIR__ . '/../..' . '/app/Models/Api/v1/Status.php',
+>>>>>>> 30aaa31e3ce51eac7c2a03e2b05c0ccd4f0ec656
         'App\\Models\\Api\\v1\\Supplier' => __DIR__ . '/../..' . '/app/Models/Api/v1/Supplier.php',
         'App\\Models\\Api\\v1\\UnitOfMeasure' => __DIR__ . '/../..' . '/app/Models/Api/v1/UnitOfMeasure.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',

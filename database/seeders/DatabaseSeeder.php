@@ -14,5 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UnitOfMeasureSeeder::class);
+        $this->call(StatusSeeder::class);
+
     }
 }

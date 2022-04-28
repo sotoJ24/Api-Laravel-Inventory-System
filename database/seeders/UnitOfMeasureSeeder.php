@@ -15,7 +15,7 @@ class UnitOfMeasureSeeder extends Seeder
     public function run()
     {
         $unit = new UnitOfMeasure();
-
+        
         $unit->symbol = "Al";
         $unit->description = "Alquiler de uso habitacional";
         $unit->unitType = "Servicio";

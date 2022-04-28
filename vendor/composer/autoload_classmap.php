@@ -40,7 +40,11 @@ return array(
     'App\\Models\\Api\\v1\\Invoicing' => $baseDir . '/app/Models/Api/v1/Invoicing.php',
     'App\\Models\\Api\\v1\\Reserved' => $baseDir . '/app/Models/Api/v1/Reserved.php',
     'App\\Models\\Api\\v1\\Rol' => $baseDir . '/app/Models/Api/v1/Rol.php',
+<<<<<<< HEAD
     'App\\Models\\Api\\v1\\Root' => $baseDir . '/app/Models/Api/v1/Root.php',
+=======
+    'App\\Models\\Api\\v1\\Status' => $baseDir . '/app/Models/Api/v1/Status.php',
+>>>>>>> 30aaa31e3ce51eac7c2a03e2b05c0ccd4f0ec656
     'App\\Models\\Api\\v1\\Supplier' => $baseDir . '/app/Models/Api/v1/Supplier.php',
     'App\\Models\\Api\\v1\\UnitOfMeasure' => $baseDir . '/app/Models/Api/v1/UnitOfMeasure.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
