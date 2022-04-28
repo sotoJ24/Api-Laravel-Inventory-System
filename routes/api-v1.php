@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\ArticleController;
 use App\Http\Controllers\Api\v1\UnitOfMeasureController;
+use App\Http\Controllers\Api\v1\BusinessController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,4 @@ Route::put('articlesDestroy/{id}', [\App\Http\Controllers\Api\v1\ArticleControll
 
 //{{-- UnitOfMeasure Routes --}}\\
 Route::apiResource('unitofmeasures',UnitOfMeasureController::class)->names('api.v1.unitofmeasures');
-
+Route::apiResource('business',BusinessController::class)->names('api.v1.business');
