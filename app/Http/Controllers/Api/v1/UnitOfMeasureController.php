@@ -15,7 +15,7 @@ class UnitOfMeasureController extends Controller
      */
     public function index()
     {
-        $unitOfMeasure = UnitOfMeasure::all();
+        $unitOfMeasure = UnitOfMeasure::orderBy('description')->get();
         return response()->json($unitOfMeasure, 200);
     }
 
