@@ -15,7 +15,7 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        $business = Business::where('statuses_id',5)->get();
+        $business = Business::where('statuses_id',4)->get();
         return response()->json($business,200); 
         
     }
@@ -70,7 +70,19 @@ class BusinessController extends Controller
      */
     public function update(Request $request, Business $business)
     {
-        //
+        $validation = $request->validate([
+            'name' => 'required|string|max:50|unique:businesses,name,'.$business->id,
+            'identifier' => 'required|string|max:20|unique:businesses,identifier,'.$business->id,
+            'statuses_id' => 'required|numeric',
+            'super_user_id' => 'required|numeric',
+            'phone' => 'required|string|max:25',
+            'email' => 'required|string|max:100'
+
+        ]);
+        
+         $business->update($request->all());
+         return response()->json($business,200);
+        
     }
 
     /**
@@ -79,8 +91,12 @@ class BusinessController extends Controller
      * @param  \App\Models\Api\v1\Business  $business
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Business $business)
+    public function destroy(Request $request, $id)
     {
-        //
+        $changeStatus = Business::find($id);
+        $changeStatus->statuses_id = $request->statuses_id;
+        $changeStatus->save();
+        return response()->json($changeStatus, 200);
+
     }
 }

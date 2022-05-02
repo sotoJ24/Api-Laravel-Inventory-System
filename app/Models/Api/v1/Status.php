@@ -5,6 +5,7 @@ namespace App\Models\Api\v1;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\Business;
+use App\Models\Api\v1\Campus;
 
 class Status extends Model
 {
@@ -15,6 +16,11 @@ class Status extends Model
     public function statusBusiness()
     {
          return $this->hasmany(Business::class);
+    }
+
+    public function statusCampus()
+    {
+         return $this->hasmany(Campus::class);
     }
 }
 

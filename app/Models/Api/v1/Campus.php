@@ -11,15 +11,7 @@ class Campus extends Model
     protected $fillable = ['name', //string
                             'address',  //string
                             'phone', //string
-                            'email', //string
-                            'states',    //enum
-                            'company_id' //foreing key
+                            'email' //string 
     ];
-    const Enable = 1;
-    const Disable = 0;
-
-    function company(){
-        return $this->belongsTo(Company::class);
-    }
-
+   
 }
