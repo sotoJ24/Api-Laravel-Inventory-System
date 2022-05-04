@@ -16,7 +16,7 @@ class RootController extends Controller
      */
     public function index()
     {
-        $root = Root::where('status_id',5)->get();
+        $root = Root::all();
         return response()->json($root,200);
     }
 
