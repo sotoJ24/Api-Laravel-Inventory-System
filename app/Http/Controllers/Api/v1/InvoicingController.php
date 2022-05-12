@@ -15,7 +15,7 @@ class InvoicingController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
