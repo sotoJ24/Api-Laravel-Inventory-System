@@ -17,7 +17,7 @@ class CreateHeaderInventoryLostsTable extends Migration
             $table->id();
             $table->date('date');
             $table->unsignedBigInteger('user_id');     //foreing key
-            $table->double('amount',5,3);
+            $table->double('amount',5,3)->nullable();
             $table->timestamps();
         });
     }
