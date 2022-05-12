@@ -52,7 +52,10 @@ class RootController extends Controller
     {
         //
     }
-
+    public function getRootEdit($id){
+        $root = Root::find($id);
+        return response()->json($root,200);
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -71,6 +74,7 @@ class RootController extends Controller
         $root->update($request->all());
         return response()->json($root,200);
     }
+
 
     /**
      * Remove the specified resource from storage.

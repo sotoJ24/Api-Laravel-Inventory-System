@@ -15,7 +15,8 @@ class CampusController extends Controller
      */
     public function index()
     {
-        //
+        //$campus = Campuses::where('states_id',4)->get();
+        //return response()->json($campus,200);
     }
 
     /**
@@ -26,7 +27,14 @@ class CampusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $campus = $campus->validate([
+            //'name' => 
+            // 'address'  => 
+            // 'phone'  =>  
+            // 'email'  => 
+            // 'states_id'  => 
+            // 'business_id'  => 
+        ]);
     }
 
     /**
@@ -58,7 +66,7 @@ class CampusController extends Controller
      * @param  \App\Models\Api\v1\Campus  $campus
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Campus $campus)
+    public function destroy(Request $request, $id)
     {
         //
     }

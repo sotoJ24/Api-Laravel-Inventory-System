@@ -62,7 +62,15 @@ class ArticleController extends Controller
     {
         //
     }
+    public function findArticle($barcode){
+        $article = Article::where('barcode',$barcode)->firstOrFail();
+        if($article)
+            return response()->json($article,200);
+        else{
+            return response()->json(['message'=>'not found'],404);
 
+        }
+    }
     /**
      * Update the specified resource in storage.
      *
