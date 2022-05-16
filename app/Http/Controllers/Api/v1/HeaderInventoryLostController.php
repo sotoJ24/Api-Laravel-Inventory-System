@@ -18,6 +18,15 @@ class HeaderInventoryLostController extends Controller
         //
     }
 
+    public function showLostByDateRange(Request $request)
+    {
+        $lost = HeaderInventoryLost::whereBetween('date', [$request->from, $request->until])->get();
+        if(empty($lost))
+            return response()->json(['message'=>'No hay perdidas en ese rango'],404);
+        else
+            return response()->json($lost,200);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
