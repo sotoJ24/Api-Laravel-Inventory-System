@@ -5,7 +5,9 @@ namespace App\Models\Api\v1;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-Use App\Models\Api\v1\Article_Supplier;
+use App\Models\Api\v1\Article_Supplier;
+use App\Models\Api\v1\UnitOfMeasure;
+use App\Models\Api\v1\InventoryLosse;
 
 class Article extends Model
 {
@@ -30,5 +32,9 @@ class Article extends Model
 
     public function articleSupplier(){
         return $this->hasMany(Article_Supplier::class);
+    }
+
+    public function inventoryLostDetail(){
+        return $this->hasMany(InventoryLostDetail::class);
     }
 }

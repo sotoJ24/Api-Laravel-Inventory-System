@@ -30,7 +30,7 @@ Route::get('/test', function(){
 Route::apiResource('articles', ArticleController::class)->names('api.v1.articles')->except(['destroy']);
 Route::get('articlesEdit/{id}', [\App\Http\Controllers\Api\v1\ArticleController::class,'getArticleEdit'])->name('article.edit');
 Route::put('articlesDestroy/{id}', [\App\Http\Controllers\Api\v1\ArticleController::class,'destroy'])->name('api.v1.articles.destroy');
-
+Route::get('articles/find/{barcode}',[\App\Http\Controllers\Api\v1\ArticleController::class,'findArticle'])->name('api.v1.article.find');
 //{{-- UnitOfMeasure Routes --}}\\
 Route::apiResource('unitofmeasures',UnitOfMeasureController::class)->names('api.v1.unitofmeasures');
 

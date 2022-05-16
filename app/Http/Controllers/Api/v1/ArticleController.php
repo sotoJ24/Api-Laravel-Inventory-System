@@ -62,7 +62,15 @@ class ArticleController extends Controller
     {
         //
     }
+    public function findArticle($barcode){
+        $article = Article::where('barcode',$barcode)->firstOrFail();
+        if($article)
+            return response()->json($article,200);
+        else{
+            return response()->json(['message'=>'not found'],404);
 
+        }
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -102,13 +110,6 @@ class ArticleController extends Controller
      * @param  \App\Models\Api\v1\Article  $article
      * @return \Illuminate\Http\Response
      */
-    // public function statesChange(Request $request, $id)
-    // {
-    //     $changeStatus = Article::find($id);
-    //     $changeStatus->states = $request->states;
-    //     $changeStatus->save();
-    //     return response()->json($changeStatus, 200);
-    // }
 
     public function destroy(Request $request, $id)
     {

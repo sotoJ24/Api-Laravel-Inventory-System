@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Api\v1\InventoryLosse;
+use App\Models\Api\v1\InventoryLostDetail;
 use Illuminate\Http\Request;
 
-class InventoryLosseController extends Controller
+class InventoryLostDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -32,10 +32,10 @@ class InventoryLosseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Api\v1\InventoryLosse  $inventoryLosse
+     * @param  \App\Models\Api\v1\InventoryLostDetail  $inventoryLostDetail
      * @return \Illuminate\Http\Response
      */
-    public function show(InventoryLosse $inventoryLosse)
+    public function show(InventoryLostDetail $inventoryLostDetail)
     {
         //
     }
@@ -44,10 +44,10 @@ class InventoryLosseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Api\v1\InventoryLosse  $inventoryLosse
+     * @param  \App\Models\Api\v1\InventoryLostDetail  $inventoryLostDetail
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, InventoryLosse $inventoryLosse)
+    public function update(Request $request, InventoryLostDetail $inventoryLostDetail)
     {
         //
     }
@@ -55,10 +55,10 @@ class InventoryLosseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Api\v1\InventoryLosse  $inventoryLosse
+     * @param  \App\Models\Api\v1\InventoryLostDetail  $inventoryLostDetail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(InventoryLosse $inventoryLosse)
+    public function destroy(InventoryLostDetail $inventoryLostDetail)
     {
         //
     }
