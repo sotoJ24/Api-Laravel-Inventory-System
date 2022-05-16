@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Api\v1\Campus;
 use Illuminate\Http\Request;
 
+
 class CampusController extends Controller
 {
     /**
@@ -15,8 +16,8 @@ class CampusController extends Controller
      */
     public function index()
     {
-        //$campus = Campuses::where('states_id',4)->get();
-        //return response()->json($campus,200);
+        $campus = Campus::where('states_id',4)->get();
+        return response()->json($campus,200);
     }
 
     /**
@@ -27,14 +28,22 @@ class CampusController extends Controller
      */
     public function store(Request $request)
     {
-        $campus = $campus->validate([
-            //'name' => 
-            // 'address'  => 
-            // 'phone'  =>  
-            // 'email'  => 
-            // 'states_id'  => 
-            // 'business_id'  => 
+        $validation = $request->validate([
+            'name' => 'required|string|max:100|unique:campuses',
+            'address'  => 'required|string|nullable:campuses',
+            'phone'  =>  'required|string|max:30|nullable:campuses',
+            'email'  => 'required|string|max:100|nullable:campuses',
+            'states_id'  => 'required|numeric',
+            'businesses_id'  => 'required|numeric'
         ]);
+
+        $campus = null;
+        if($validation)
+        {
+            $campus = Campus::create($request->all());
+            return response()->json($campus,201);
+        }
+        return response()->json($campus,417);
     }
 
     /**
@@ -57,7 +66,17 @@ class CampusController extends Controller
      */
     public function update(Request $request, Campus $campus)
     {
-        //
+        $validation = $request->validate([
+            'name' => 'required|string|max:100|unique:campuses',
+            'address'  => 'required|string|nullable:campuses',
+            'phone'  =>  'required|string|max:30|nullable:campuses',
+            'email'  => 'required|string|max:100|nullable:campuses',
+            'states_id'  => 'required|numeric',
+            'businesses_id'  => 'required|numeric'
+        ]);
+        
+         $campus->update($request->all());
+         return response()->json($campus,200);
     }
 
     /**
@@ -68,6 +87,9 @@ class CampusController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        //
+        $changeStatus = Campus::find($id);
+        $changeStatus->states_id = $request->states_id;
+        $changeStatus->save();
+        return response()->json($changeStatus, 200);
     }
 }

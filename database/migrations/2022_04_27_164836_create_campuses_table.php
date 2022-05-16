@@ -20,9 +20,12 @@ class CreateCampusesTable extends Migration
             $table->string('address')->nullable();
             $table->string('phone',30)->nullable();
             $table->string('email',100)->nullable();
+            $table->unsignedBigInteger('states_id');
+            $table->unsignedBigInteger('businesses_id');
             $table->timestamps();
             //Foreing keys
-            
+            $table->foreign('states_id')->references('id')->on('statuses');
+            $table->foreign('businesses_id')->references('id')->on('businesses');
         });
         
     }

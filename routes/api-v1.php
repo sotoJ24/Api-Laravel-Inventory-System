@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\v1\ArticleController;
 use App\Http\Controllers\Api\v1\RootController;
 use App\Http\Controllers\Api\v1\UnitOfMeasureController;
 use App\Http\Controllers\Api\v1\BusinessController;
+use App\Http\Controllers\Api\v1\CampusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,12 @@ Route::put('articlesDestroy/{id}', [\App\Http\Controllers\Api\v1\ArticleControll
 
 //{{-- UnitOfMeasure Routes --}}\\
 Route::apiResource('unitofmeasures',UnitOfMeasureController::class)->names('api.v1.unitofmeasures');
+
+//{{-- Business Routes --}}\\
 Route::apiResource('business',BusinessController::class)->names('api.v1.business');
+
+//{{-- Campus Routes --}}\\
+Route::apiResource('campus',CampusController::class)->names('api.v1.campus');
 
 //{{-- Super User Routes --}}\\
 Route::apiResource('roots', RootController::class)->names('api.v1.roots');
