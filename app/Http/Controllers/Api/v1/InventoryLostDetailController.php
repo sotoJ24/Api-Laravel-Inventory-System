@@ -26,7 +26,20 @@ class InventoryLostDetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'headerInventoryLost_id' => 'required|numeric',
+            'article_id' => 'required|numeric',
+            'unitOfMeasure_id' => 'required|numeric',
+            'quantity' => 'required|numeric',
+            'amount' => 'required|numeric',
+            'date' => 'required'
+        ]);
+        $detail = null;
+        if($validation){
+            $detail = InventoryLostDetail::create($request->all());
+            return response()->json($detail, 201);
+        }
+        return response()->json($detail,417);
     }
 
     /**

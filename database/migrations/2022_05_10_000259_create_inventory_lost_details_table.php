@@ -15,7 +15,16 @@ class CreateInventoryLostDetailsTable extends Migration
     {
         Schema::create('inventory_lost_details', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('headerInventoryLost_id');
+            $table->unsignedBigInteger('article_id');
+            $table->unsignedBigInteger('unitOfMeasure_id');   //foreing key
+            $table->double('quantity',5,3);
+            $table->double('amount',5,3);
             $table->timestamps();
+            //Foreing keys
+            $table->foreign('headerInventoryLost_id')->references('id')->on('header_inventory_losts');
+            $table->foreign('article_id')->references('id')->on('articles');
+            $table->foreign('unitOfMeasure_id')->references('id')->on('unit_of_measures');
         });
     }
 
