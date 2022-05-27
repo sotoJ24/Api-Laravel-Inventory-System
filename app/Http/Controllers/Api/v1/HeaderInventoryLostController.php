@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Models\Api\v1\HeaderInventoryLost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HeaderInventoryLostController extends Controller
 {
@@ -20,7 +21,11 @@ class HeaderInventoryLostController extends Controller
 
     public function showLostByDateRange(Request $request)
     {
-        $lost = HeaderInventoryLost::whereBetween('date', [$request->from, $request->until])->get();
+        $lost = DB::table('header_inventory_losts')
+        ->join('roots','header_inventory_losts.user_id','=','roots.id')
+        ->select('roots.user','header_inventory_losts.id','header_inventory_losts.date', 'header_inventory_losts.amount', 'header_inventory_losts.status')
+        ->whereBetween('date', [$request->from, $request->until])
+        ->get();
         if(empty($lost))
             return response()->json(['message'=>'No hay perdidas en ese rango'],404);
         else
@@ -38,7 +43,8 @@ class HeaderInventoryLostController extends Controller
         $validation = $request->validate([
             'date' => 'required',
             'user_id' => 'required|numeric',
-            'amount' => 'numeric'
+            'amount' => 'numeric',
+            'campus_id' => 'required|numeric',
         ]);
         $header = null;
         if($validation){

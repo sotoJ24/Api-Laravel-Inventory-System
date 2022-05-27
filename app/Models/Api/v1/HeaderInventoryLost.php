@@ -6,14 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Api\v1\InventoryLostDetail;
+use App\Models\Api\v1\Campus;
 
 class HeaderInventoryLost extends Model
 {
     use HasFactory;
     protected $fillable = ['date', //date
                            'user_id', //foreing
+                           'campus_id',
+                           'status',
                            'amount' //double
     ];
+    const Close = 0;
+    const Open = 1;
 
     public function user()
     {
@@ -23,6 +28,11 @@ class HeaderInventoryLost extends Model
     public function inventoryLostDetail()
     {
         return $this->hasMany(InventoryLostDetail::class);
+    }
+
+    public function campus()
+    {
+        return $this->belongsTo(Campus::class);
     }
 }
 

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\Status;
 use App\Models\Api\v1\Business;
+use App\Models\Api\v1\HeaderInventoryLost;
 
 class Campus extends Model
 {
@@ -13,7 +14,7 @@ class Campus extends Model
     protected $fillable = ['name', //string
                             'address',  //string
                             'phone', //string
-                            'email' ,//string 
+                            'email' ,//string
                             'states_id',//foreign-key
                             'businesses_id'//foreign-key
     ];
@@ -27,5 +28,10 @@ class Campus extends Model
     {
         return $this->belongsTo(Business::class);
     }
-   
+
+    public function campus()
+    {
+        return $this->hasMany(HeaderInventoryLost::class);
+    }
+
 }
