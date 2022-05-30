@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UnitOfMeasureSeeder::class);
         $this->call(StatusSeeder::class);
         $this->call(PaymentsMethodsSeeder::class);
+        $this->call(RolsSeeder::class);
 
     }
 }

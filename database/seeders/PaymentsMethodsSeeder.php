@@ -14,24 +14,24 @@ class PaymentsMethodsSeeder extends Seeder
      */
     public function run()
     {
-        $payments = new PaymentsMethods();
-        $payments->name = "Efectivo";
-        $payments->save();
-        
-        $payments = new PaymentsMethods();
-        $payments->name = "Sinpe";
-        $payments->save();
+        $payments1 = new PaymentsMethods();
+        $payments1->name = "Efectivo";
+        $payments1->save();
 
-        $payments = new PaymentsMethods();
-        $payments->name = "Tarjeta";
-        $payments->save();
+        $payments2 = new PaymentsMethods();
+        $payments2->name = "Sinpe";
+        $payments2->save();
 
-        $payments = new PaymentsMethods();
-        $payments->name = "Transferencia";
-        $payments->save();
+        $payments3 = new PaymentsMethods();
+        $payments3->name = "Tarjeta";
+        $payments3->save();
 
-        $payments = new PaymentsMethods;
-        $payments->name = "Cheque";
-        $payments->save();
+        $payments4 = new PaymentsMethods();
+        $payments4->name = "Transferencia";
+        $payments4->save();
+
+        $payments5 = new PaymentsMethods;
+        $payments5->name = "Cheque";
+        $payments5->save();
     }
 }

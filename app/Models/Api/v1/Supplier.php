@@ -4,21 +4,23 @@ namespace App\Models\Api\v1;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Api\v1\Status;
 
 class Supplier extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', //string
-                           'phone',  //string
+    protected $fillable = ['companyName', //string
+                           'phoneNumber',  //string
                            'email', //string
-                           'contact', //string
-                           'mobile', //string
-                           'state' //enum
+                           'sellerName', //string
+                           'sellerPhoneNumber', //string
+                           'statuses_id' //enum
     ];
-    const Enable = 1;
-    const Disable = 0;
-    public function articleSupplier(){
-        return $this->hasMany(Article_Supplier::class);
+
+
+    public function statusSupplier()
+    {
+        return $this->belongsTo(Status::class);
     }
 }

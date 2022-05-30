@@ -522,7 +522,7 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'App\\Http\\Controllers\\Api\\v1\\ArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/ArticleController.php',
         'App\\Http\\Controllers\\Api\\v1\\BusinessController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/BusinessController.php',
         'App\\Http\\Controllers\\Api\\v1\\CampusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CampusController.php',
-        'App\\Http\\Controllers\\Api\\v1\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CustomerController.php',
+        'App\\Http\\Controllers\\Api\\v1\\CustomerBusinessController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CustomerBusinessController.php',
         'App\\Http\\Controllers\\Api\\v1\\HeaderInventoryLostController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/HeaderInventoryLostController.php',
         'App\\Http\\Controllers\\Api\\v1\\InventoryLostDetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/InventoryLostDetailController.php',
         'App\\Http\\Controllers\\Api\\v1\\InvoicingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/InvoicingController.php',
@@ -547,8 +547,13 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'App\\Models\\Api\\v1\\Article_Supplier' => __DIR__ . '/../..' . '/app/Models/Api/v1/Article_Supplier.php',
         'App\\Models\\Api\\v1\\Business' => __DIR__ . '/../..' . '/app/Models/Api/v1/Business.php',
         'App\\Models\\Api\\v1\\Campus' => __DIR__ . '/../..' . '/app/Models/Api/v1/Campus.php',
+<<<<<<< HEAD
         'App\\Models\\Api\\v1\\Customer' => __DIR__ . '/../..' . '/app/Models/Api/v1/Customer.php',
         'App\\Models\\Api\\v1\\DailyBox' => __DIR__ . '/../..' . '/app/Models/Api/v1/DailyBox.php',
+=======
+        'App\\Models\\Api\\v1\\CustomerBusiness' => __DIR__ . '/../..' . '/app/Models/Api/v1/CustomerBusiness.php',
+        'App\\Models\\Api\\v1\\Customers' => __DIR__ . '/../..' . '/app/Models/Api/v1/Customers.php',
+>>>>>>> newProviders
         'App\\Models\\Api\\v1\\HeaderInventoryLost' => __DIR__ . '/../..' . '/app/Models/Api/v1/HeaderInventoryLost.php',
         'App\\Models\\Api\\v1\\InventoryLostDetail' => __DIR__ . '/../..' . '/app/Models/Api/v1/InventoryLostDetail.php',
         'App\\Models\\Api\\v1\\Invoicing' => __DIR__ . '/../..' . '/app/Models/Api/v1/Invoicing.php',

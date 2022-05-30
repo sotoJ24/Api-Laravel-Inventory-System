@@ -74,7 +74,7 @@ class CampusController extends Controller
             'states_id'  => 'required|numeric',
             'businesses_id'  => 'required|numeric'
         ]);
-        
+
          $campus->update($request->all());
          return response()->json($campus,200);
     }

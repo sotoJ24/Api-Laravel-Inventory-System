@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\Status;
 use App\Models\Api\v1\Business;
-use App\Models\Api\v1\HeaderInventoryLost;
+use App\Models\User;
 
 class Campus extends Model
 {
@@ -24,14 +24,16 @@ class Campus extends Model
         return $this->belongsTo(Status::class);
     }
 
-    public function statusBusiness()
+    public function campusBusiness()
     {
         return $this->belongsTo(Business::class);
     }
 
-    public function campus()
+    public function campusUser()
     {
-        return $this->hasMany(HeaderInventoryLost::class);
+        return $this->hasMany(User::class);
     }
+
+
 
 }

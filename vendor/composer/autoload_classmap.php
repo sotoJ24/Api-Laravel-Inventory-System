@@ -12,7 +12,7 @@ return array(
     'App\\Http\\Controllers\\Api\\v1\\ArticleController' => $baseDir . '/app/Http/Controllers/Api/v1/ArticleController.php',
     'App\\Http\\Controllers\\Api\\v1\\BusinessController' => $baseDir . '/app/Http/Controllers/Api/v1/BusinessController.php',
     'App\\Http\\Controllers\\Api\\v1\\CampusController' => $baseDir . '/app/Http/Controllers/Api/v1/CampusController.php',
-    'App\\Http\\Controllers\\Api\\v1\\CustomerController' => $baseDir . '/app/Http/Controllers/Api/v1/CustomerController.php',
+    'App\\Http\\Controllers\\Api\\v1\\CustomerBusinessController' => $baseDir . '/app/Http/Controllers/Api/v1/CustomerBusinessController.php',
     'App\\Http\\Controllers\\Api\\v1\\HeaderInventoryLostController' => $baseDir . '/app/Http/Controllers/Api/v1/HeaderInventoryLostController.php',
     'App\\Http\\Controllers\\Api\\v1\\InventoryLostDetailController' => $baseDir . '/app/Http/Controllers/Api/v1/InventoryLostDetailController.php',
     'App\\Http\\Controllers\\Api\\v1\\InvoicingController' => $baseDir . '/app/Http/Controllers/Api/v1/InvoicingController.php',
@@ -37,8 +37,13 @@ return array(
     'App\\Models\\Api\\v1\\Article_Supplier' => $baseDir . '/app/Models/Api/v1/Article_Supplier.php',
     'App\\Models\\Api\\v1\\Business' => $baseDir . '/app/Models/Api/v1/Business.php',
     'App\\Models\\Api\\v1\\Campus' => $baseDir . '/app/Models/Api/v1/Campus.php',
+<<<<<<< HEAD
     'App\\Models\\Api\\v1\\Customer' => $baseDir . '/app/Models/Api/v1/Customer.php',
     'App\\Models\\Api\\v1\\DailyBox' => $baseDir . '/app/Models/Api/v1/DailyBox.php',
+=======
+    'App\\Models\\Api\\v1\\CustomerBusiness' => $baseDir . '/app/Models/Api/v1/CustomerBusiness.php',
+    'App\\Models\\Api\\v1\\Customers' => $baseDir . '/app/Models/Api/v1/Customers.php',
+>>>>>>> newProviders
     'App\\Models\\Api\\v1\\HeaderInventoryLost' => $baseDir . '/app/Models/Api/v1/HeaderInventoryLost.php',
     'App\\Models\\Api\\v1\\InventoryLostDetail' => $baseDir . '/app/Models/Api/v1/InventoryLostDetail.php',
     'App\\Models\\Api\\v1\\Invoicing' => $baseDir . '/app/Models/Api/v1/Invoicing.php',
