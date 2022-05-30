@@ -13,9 +13,11 @@ class InventoryLostDetail extends Model
     use HasFactory;
     protected $fillable =['headerInventoryLost_id',
                           'article_id',
+                          'salePrice',
                           'unitOfMeasure_id',
                           'quantity',
-                          'amount'
+                          'amount',
+                          'observation'
 
     ];
     public function headerInventoryLost()
