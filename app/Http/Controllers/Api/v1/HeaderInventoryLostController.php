@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Api\v1\HeaderInventoryLost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\FuncCall;
 
 class HeaderInventoryLostController extends Controller
 {
