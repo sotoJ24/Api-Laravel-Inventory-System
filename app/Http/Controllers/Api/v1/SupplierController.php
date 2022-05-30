@@ -15,7 +15,9 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        //
+
+        $supplier = Supplier::query('statuses_id')->get();
+        return response()->json($supplier,200);
     }
 
     /**
@@ -26,7 +28,24 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'companyName' => 'required|string|max:100',
+            'phoneNumber' => 'required|string|max:30',
+            'email' => 'required|string|unique:suppliers',
+            'sellerName' => 'required|string|max:100',
+            'sellerPhoneNumber' => 'required|string|max:30',
+            'statuses_id' => 'required|numeric'
+
+        ]);
+
+        $supplier = null;
+        if($validation)
+        {
+            $supplier = Supplier::create($request->all());
+            return response()->json($supplier,201);
+        }
+        return response()->json($supplier,417);
+
     }
 
     /**
@@ -49,7 +68,18 @@ class SupplierController extends Controller
      */
     public function update(Request $request, Supplier $supplier)
     {
-        //
+        $validation = $request->validate([
+            'companyName' => 'required|string|max:100',
+            'phoneNumber' => 'required|string|max:30',
+            'email' => 'required|string|unique:suppliers,email,'.$supplier->id,
+            'sellerName' => 'required|string|max:100',
+            'sellerPhoneNumber' => 'required|string|max:30',
+            'statuses_id' => 'required|numeric'
+        ]);
+
+        $supplier->update($request->all());
+        return response()->json($supplier,200);
+
     }
 
     /**
@@ -58,8 +88,11 @@ class SupplierController extends Controller
      * @param  \App\Models\Api\v1\Supplier  $supplier
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Supplier $supplier)
+    public function destroy(Request $request, $id)
     {
-        //
+        $changeStatus = Supplier::find($id);
+        $changeStatus->statuses_id = $request->statuses_id;
+        $changeStatus->save();
+        return response()->json($changeStatus, 200);
     }
 }

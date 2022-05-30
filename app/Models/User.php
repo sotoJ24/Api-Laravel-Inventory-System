@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Api\v1\HeaderInventoryLost;
+use App\Models\Api\v1\Status;
+use App\Models\Api\v1\Rol;
+use App\Models\Api\v1\Campus;
 
 class User extends Authenticatable
 {
@@ -22,7 +25,28 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'IdRol',
+        'campus_Id',
+        'statuses_id',
+
     ];
+
+    public function statusUser()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function RolUser()
+    {
+        return $this->belongsTo(Rol::class);
+    }
+
+    public function campusUser()
+    {
+        return $this->belongsTo(Campus::class);
+    }
+
+
 
     /**
      * The attributes that should be hidden for serialization.

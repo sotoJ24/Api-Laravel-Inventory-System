@@ -5,7 +5,7 @@ namespace App\Models\Api\v1;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\Article;
-use App\Models\Api\v1\Supplier;
+// use App\Models\Api\v1\Supplier;
 
 class Article_Supplier extends Model
 {
@@ -19,8 +19,8 @@ class Article_Supplier extends Model
         return $this->belongsTo(Article::class);
     }
 
-    public function supplier()
-    {
-        return $this->belongsTo(Supplier::class);
-    }
+    // public function supplier()
+    // {
+    //     return $this->belongsTo(Supplier::class);
+    // }
 }

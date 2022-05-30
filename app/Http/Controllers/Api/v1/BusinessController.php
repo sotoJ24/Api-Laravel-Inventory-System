@@ -16,8 +16,8 @@ class BusinessController extends Controller
     public function index()
     {
         $business = Business::where('statuses_id',4)->get();
-        return response()->json($business,200); 
-        
+        return response()->json($business,200);
+
     }
 
     /**
@@ -27,8 +27,8 @@ class BusinessController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
-        
+    {
+
          $validation = $request->validate([
             'name' => 'required|string|max:50|unique:businesses',
             'identifier' => 'required|string|max:20|unique:businesses',
@@ -37,17 +37,17 @@ class BusinessController extends Controller
             'phone' => 'required|string|max:25',
             'email' => 'required|string|max:100'
 
-        ]);
+        ]);  
 
-        
+
         $business = null;
         if($validation)
         {
             $business = Business::create($request->all());
             return response()->json($business,201);
         }
-        return response()->json($business,417);  
-        
+        return response()->json($business,417);
+
     }
 
     /**
@@ -79,10 +79,10 @@ class BusinessController extends Controller
             'email' => 'required|string|max:100'
 
         ]);
-        
+
          $business->update($request->all());
          return response()->json($business,200);
-        
+
     }
 
     /**

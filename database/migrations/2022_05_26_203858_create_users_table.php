@@ -13,12 +13,19 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        //campo de rol, mandarlo tostado, validar que solo sea 1-2 para crear
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('name',72);
+            $table->string('email',96);
+            $table->string('password',30);
+            $table->unsignedBigInteger('IdRol');
+            $table->unsignedBigInteger('campus_Id');
+            $table->unsignedBigInteger('statuses_id');
+            //FK
+            $table->foreign('IdRol')->references('id')->on('rols');
+            $table->foreign('campus_Id')->references('id')->on('campuses');
+            $table->foreign('statuses_id')->references('id')->on('statuses');
             $table->rememberToken();
             $table->timestamps();
         });

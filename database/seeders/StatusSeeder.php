@@ -14,26 +14,26 @@ class StatusSeeder extends Seeder
      */
     public function run()
     {
-        $status = new Status();
-        $status->name = "Cancelado";
-        $status->save();
-        
         $status1 = new Status();
-        $status1->name = "Pendiente";
+        $status1->name = "Cancelado";
         $status1->save();
 
         $status2 = new Status();
-        $status2->name = "Entregado";
+        $status2->name = "Pendiente";
         $status2->save();
 
         $status3 = new Status();
-        $status3->name = "Activo";
+        $status3->name = "Entregado";
         $status3->save();
 
-        $status3 = new Status();
-        $status3->name = "Inactivo";
-        $status3->save();
+        $status4 = new Status();
+        $status4->name = "Activo";
+        $status4->save();
 
-        
+        $status5 = new Status();
+        $status5->name = "Inactivo";
+        $status5->save();
+
+
     }
 }

@@ -15,12 +15,14 @@ class CreateSuppliersTable extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
-            $table->string('phone',30)->nullable();
-            $table->string('email')->unique()->nullable();
-            $table->string('contact',100)->nullable();
-            $table->string('mobile',30)->nullable();
-            $table->enum('state',[Supplier::Enable, Supplier::Disable])->default(Supplier::Enable);
+            $table->string('companyName',100);
+            $table->string('phoneNumber',30)->nullable();
+            $table->string('email')->unique();
+            $table->string('sellerName',100)->nullable();
+            $table->string('sellerPhoneNumber',30)->nullable();
+            $table->unsignedBigInteger('statuses_id');
+
+            $table->foreign('statuses_id')->references('id')->on('statuses');
             $table->timestamps();
         });
     }
