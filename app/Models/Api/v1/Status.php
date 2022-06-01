@@ -9,6 +9,7 @@ use App\Models\Api\v1\Campus;
 use App\Models\Api\v1\CustomerBusiness;
 use App\Models\Api\v1\Supplier;
 use App\Models\Api\v1\Customers;
+use App\Models\Api\v1\DailyBox;
 use App\Models\User;
 
 
@@ -46,6 +47,11 @@ class Status extends Model
     public function statusUser()
     {
          return $this->hasmany(User::class);
+    }
+
+    public function statusDailyBox()
+    {
+         return $this->hasmany(DailyBox::class);
     }
 
 }

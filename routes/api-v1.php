@@ -9,8 +9,10 @@ use App\Http\Controllers\Api\v1\BusinessController;
 use App\Http\Controllers\Api\v1\CampusController;
 use App\Http\Controllers\Api\v1\CustomerBusinessController;
 use App\Http\Controllers\Api\v1\SupplierController;
-use App\Http\Controllers\Api\v1\customerController;
+use App\Http\Controllers\Api\v1\CustomerController;
 use App\Http\Controllers\Api\v1\UsersController;
+use App\Http\Controllers\Api\v1\DailyBoxController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,15 +50,20 @@ Route::apiResource('campus',CampusController::class)->names('api.v1.campus');
 //{{-- CustomerBusinesses Routes --}}\\
 Route::apiResource('customers/business',CustomerBusinessController::class)->names('api.v1.customers.businesses');
 
-//{{-- Supplier Routes --}}\\
+// //{{-- Supplier Routes --}}\\
 Route::apiResource('suppliers',SupplierController::class)->names('api.v1.supplier');
 
 //{{-- Customer Routes --}}\\
-Route::apiResource('customers',customerController::class)->names('api.v1.customers');
-Route::get('customersInactive/{customer}',[\App\Http\Controllers\Api\v1\customerController::class,'InactiveCustomers'])->name('api.v1.customers.inactive');
+Route::apiResource('customers',CustomerController::class)->names('api.v1.customers');
+Route::get('customersInactive/{customer}',[\App\Http\Controllers\Api\v1\CustomerController::class,'InactiveCustomers'])->name('api.v1.customers.inactive');
 
 //{{-- Users Routes --}}\\
 Route::apiResource('users',UsersController::class)->names('api.v1.users');
+
+//{{-- DailyBox Routes --}}\\
+Route::apiResource('dailybox',DailyBoxController::class)->names('api.v1.dailybox');
+Route::get('dailybox/pending/{pendingBox}',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'pending'])->name('api.v1.dailybox.pending');
+Route::get('dailybox/close/{closeBox}',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'close'])->name('api.v1.dailybox.close');
 
 //{{-- Super User Routes --}}\\
 Route::apiResource('roots', RootController::class)->names('api.v1.roots');

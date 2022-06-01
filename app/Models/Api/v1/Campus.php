@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\Status;
 use App\Models\Api\v1\Business;
+use App\Models\Api\v1\DailyBox;
 use App\Models\User;
 
 class Campus extends Model
@@ -27,6 +28,11 @@ class Campus extends Model
     public function campusBusiness()
     {
         return $this->belongsTo(Business::class);
+    }
+
+    public function campusBox()
+    {
+        return $this->belongsTo(DailyBox::class);
     }
 
     public function campusUser()
