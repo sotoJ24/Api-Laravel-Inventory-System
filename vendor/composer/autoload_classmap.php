@@ -22,6 +22,7 @@ return array(
     'App\\Http\\Controllers\\Api\\v1\\RolController' => $baseDir . '/app/Http/Controllers/Api/v1/RolController.php',
     'App\\Http\\Controllers\\Api\\v1\\RootController' => $baseDir . '/app/Http/Controllers/Api/v1/RootController.php',
     'App\\Http\\Controllers\\Api\\v1\\StatusController' => $baseDir . '/app/Http/Controllers/Api/v1/StatusController.php',
+    'App\\Http\\Controllers\\Api\\v1\\SupplierController' => $baseDir . '/app/Http/Controllers/Api/v1/SupplierController.php',
     'App\\Http\\Controllers\\Api\\v1\\UnitOfMeasureController' => $baseDir . '/app/Http/Controllers/Api/v1/UnitOfMeasureController.php',
     'App\\Http\\Controllers\\Api\\v1\\UsersController' => $baseDir . '/app/Http/Controllers/Api/v1/UsersController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',

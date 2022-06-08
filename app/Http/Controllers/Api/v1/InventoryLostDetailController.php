@@ -26,14 +26,16 @@ class InventoryLostDetailController extends Controller
      */
     public function store(Request $request)
     {
-        $validation = $request->validate([
-            'headerInventoryLost_id' => 'required|numeric',
-            'article_id' => 'required|numeric',
-            'unitOfMeasure_id' => 'required|numeric',
-            'quantity' => 'required|numeric',
-            'amount' => 'required|numeric',
-            'date' => 'required'
-        ]);
+            $validation = $request->validate([
+                'headerInventoryLost_id' => 'required|numeric',
+                'article_id' => 'required|numeric',
+                'salePrice' => 'required|numeric',
+                'unitOfMeasure_id' => 'required|numeric',
+                'quantity' => 'required|numeric',
+                'amount' => 'required|numeric',
+                'observation' => 'required|text'
+            ]);
+
         $detail = null;
         if($validation){
             $detail = InventoryLostDetail::create($request->all());
@@ -41,6 +43,8 @@ class InventoryLostDetailController extends Controller
         }
         return response()->json($detail,417);
     }
+
+    public function
 
     /**
      * Display the specified resource.

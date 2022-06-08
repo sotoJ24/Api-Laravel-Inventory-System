@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
+class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -186,8 +186,8 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Whoops\\' => 
         array (
@@ -331,8 +331,8 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -532,6 +532,7 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'App\\Http\\Controllers\\Api\\v1\\RolController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/RolController.php',
         'App\\Http\\Controllers\\Api\\v1\\RootController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/RootController.php',
         'App\\Http\\Controllers\\Api\\v1\\StatusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/StatusController.php',
+        'App\\Http\\Controllers\\Api\\v1\\SupplierController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/SupplierController.php',
         'App\\Http\\Controllers\\Api\\v1\\UnitOfMeasureController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/UnitOfMeasureController.php',
         'App\\Http\\Controllers\\Api\\v1\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/UsersController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -5655,10 +5656,10 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd239219ca32660ae495ddae1bdff9954::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd239219ca32660ae495ddae1bdff9954::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd239219ca32660ae495ddae1bdff9954::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitd239219ca32660ae495ddae1bdff9954::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit94b34e6815d269dbc0596162ee1581ff::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit94b34e6815d269dbc0596162ee1581ff::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit94b34e6815d269dbc0596162ee1581ff::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit94b34e6815d269dbc0596162ee1581ff::$classMap;
 
         }, null, ClassLoader::class);
     }
