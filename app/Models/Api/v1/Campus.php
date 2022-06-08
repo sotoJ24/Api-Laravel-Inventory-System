@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\Status;
 use App\Models\Api\v1\Business;
 use App\Models\Api\v1\DailyBox;
+use App\Models\Api\v1\Header_ticket;
 use App\Models\User;
 
 class Campus extends Model
@@ -38,6 +39,11 @@ class Campus extends Model
     public function campusUser()
     {
         return $this->hasMany(User::class);
+    }
+
+    public function CampusTicketsHeader()
+    {
+        return $this->hasMany(Header_ticket::class);
     }
 
 

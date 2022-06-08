@@ -33,5 +33,9 @@ class PaymentsMethodsSeeder extends Seeder
         $payments5 = new PaymentsMethods;
         $payments5->name = "Cheque";
         $payments5->save();
+
+        // $payments6 = new PaymentsMethods;
+        // $payments6->name = "Defecto";
+        // $payments6->save();
     }
 }
