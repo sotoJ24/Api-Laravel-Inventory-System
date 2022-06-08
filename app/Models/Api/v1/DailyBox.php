@@ -7,25 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Api\v1\Campus;
 use App\Models\Api\v1\Status;
+use App\Models\Api\v1\Header_ticket;
 
 class DailyBox extends Model
 {
     use HasFactory;
     protected $fillable = ['user_id', //FK
-                           'openingTime', //date
-                           'campus_id', //FK
-                           'openingAmount',//required double
-                           'amountByInscription', //double
-                           'amountByMonthy', //double
-                           'amountBySell', //double
-                           'amountByReservations', //double
-                           'amountByCredits', //double
-                           'amountBySinpe', //double
-                           'amountByTransfer',//double
-                           'amountByCash',//double
-                           'closingTime', //date
-                           'observations', //text
-                           'statuses_id',//FK
+                           'openingDate', //date
+                           'openingTime',
+                           'campus_id',
+                           'openingAmount',
+                           'amountByInscription',
+                           'amountByMonthy',
+                           'amountBySell',
+                           'amountByReservations',
+                           'amountByCredits',
+                           'amountBySinpe',
+                           'amountByTransfer',
+                           'amountByCash',
+                           'closingDate',
+                           'closingTime',
+                           'observations',
+                           'statuses_id'
+
     ];
 
     public function userBoxes()
@@ -41,5 +45,10 @@ class DailyBox extends Model
     public function statusBox()
     {
          return $this->belongsTo(Status::class);
+    }
+
+    public function HeaderTickets()
+    {
+         return $this->hasMany(Header_ticket::class);
     }
 }

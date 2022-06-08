@@ -62,8 +62,9 @@ Route::apiResource('users',UsersController::class)->names('api.v1.users');
 
 //{{-- DailyBox Routes --}}\\
 Route::apiResource('dailybox',DailyBoxController::class)->names('api.v1.dailybox');
-Route::get('dailybox/pending/{pendingBox}',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'pending'])->name('api.v1.dailybox.pending');
-Route::get('dailybox/close/{closeBox}',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'close'])->name('api.v1.dailybox.close');
+Route::get('dailybox/statusBox/{statusBox}',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'StatusBox'])->name('api.v1.dailybox.status');
+Route::get('dailyboxDate',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'lookingDate'])->name('api.v1.dailybox.date');
+
 
 //{{-- Super User Routes --}}\\
 Route::apiResource('roots', RootController::class)->names('api.v1.roots');

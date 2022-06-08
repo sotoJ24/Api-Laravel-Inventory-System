@@ -16,19 +16,21 @@ class CreateDailyBoxesTable extends Migration
         Schema::create('daily_boxes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->date('openingTime');
+            $table->dateTime('openingDate');
+            $table->time('openingTime');
             $table->unsignedBigInteger('campus_id');
             $table->double('openingAmount')->require();
-            $table->double('amountByInscription');
-            $table->double('amountByMonthy');
-            $table->double('amountBySell');
-            $table->double('amountByReservations');
-            $table->double('amountByCredits');
-            $table->double('amountBySinpe');
-            $table->double('amountByTransfer');
-            $table->double('amountByCash');
-            $table->date('closingTime');
-            $table->text('observations');
+            $table->double('amountByInscription')->nullable();
+            $table->double('amountByMonthy')->nullable();
+            $table->double('amountBySell')->nullable();
+            $table->double('amountByReservations')->nullable();
+            $table->double('amountByCredits')->nullable();
+            $table->double('amountBySinpe')->nullable();
+            $table->double('amountByTransfer')->nullable();
+            $table->double('amountByCash')->nullable();
+            $table->date('closingDate')->nullable();
+            $table->time('closingTime')->nullable();
+            $table->text('observations')->nullable();
             $table->unsignedBigInteger('statuses_id');
 
             $table->foreign('statuses_id')->references('id')->on('statuses');

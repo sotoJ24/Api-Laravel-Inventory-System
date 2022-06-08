@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Api\v1\DailyBox;
+use App\Models\Api\v1\Status;
 use DateTime;
 use Illuminate\Http\Request;
+
+use function PHPUnit\Framework\returnSelf;
 
 class DailyBoxController extends Controller
 {
@@ -20,16 +23,19 @@ class DailyBoxController extends Controller
         return response()->json($dailyBox,200);
     }
 
-    public function pending()
+    public function StatusBox($status)
     {
-        $dailyBox = DailyBox::where('statuses_id',2)->get();
+        $dailyBox = DailyBox::where('statuses_id',$status)->get();
         return response()->json($dailyBox,200);
     }
 
-    public function close()
+    public function lookingDate(Request $request)
     {
-        $dailyBox = DailyBox::where('statuses_id',6)->get();
-        return response()->json($dailyBox,200);
+        $dailyBox = DailyBox::whereBetween('closingDate',[$request->from, $request->until])->get();
+        if(empty($dailyBox))
+            return response()->json(['message'=>'date not found'],404);
+        else
+            return response()->json($dailyBox,200);
     }
 
     /**
@@ -43,8 +49,10 @@ class DailyBoxController extends Controller
 
         $validation = $request->validate([
             'user_id' => 'required|numeric',
-            'openingTime' => 'required|date',
+            'openingDate' => 'required|date',
+            'openingTime' => 'required',
             'campus_id' => 'required|numeric',
+            'header_tickets_id' => 'required|numeric',
             'openingAmount' => 'required|numeric',
             'amountByInscription' => 'required|numeric',
             'amountByMonthy' => 'required|numeric',
@@ -54,7 +62,8 @@ class DailyBoxController extends Controller
             'amountBySinpe' => 'required|numeric',
             'amountByTransfer' => 'required|numeric',
             'amountByCash' => 'required|numeric',
-            'closingTime' => 'required|date',
+            'closingDate' => 'required|date',
+            'closingTime' => 'required',
             'observations' => 'required|string',
             'statuses_id' => 'required|numeric'
         ]);
@@ -88,9 +97,24 @@ class DailyBoxController extends Controller
      * @param  \App\Models\Api\v1\DailyBox  $dailyBox
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DailyBox $dailyBox)
+    public function update(Request $request, $id)
     {
-        //
+
+        $validation = $request->validate([
+            'observations' => 'required|string',
+            'statuses_id' => 'required|numeric'
+        ]);
+
+        if($validation)
+        {
+            $dailyBox=DailyBox::findOrFail($id);
+            $dailyBox->observations=$request->observations;
+            $dailyBox->statuses_id=$request->statuses_id;
+            $dailyBox->save();
+            return response()->json($dailyBox,200);
+        }
+        return response()->json([],406);
+
     }
 
     /**
