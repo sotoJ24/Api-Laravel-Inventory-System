@@ -52,19 +52,10 @@ class DailyBoxController extends Controller
             'openingDate' => 'required|date',
             'openingTime' => 'required',
             'campus_id' => 'required|numeric',
-            'header_tickets_id' => 'required|numeric',
             'openingAmount' => 'required|numeric',
-            'amountByInscription' => 'required|numeric',
-            'amountByMonthy' => 'required|numeric',
-            'amountBySell' => 'required|numeric',
-            'amountByReservations' => 'required|numeric',
-            'amountByCredits' => 'required|numeric',
-            'amountBySinpe' => 'required|numeric',
-            'amountByTransfer' => 'required|numeric',
-            'amountByCash' => 'required|numeric',
-            'closingDate' => 'required|date',
-            'closingTime' => 'required',
-            'observations' => 'required|string',
+            'closingDate' => 'nullable|date',
+            'closingTime' => 'nullable',
+            'observations' => 'nullable|string',
             'statuses_id' => 'required|numeric'
         ]);
 

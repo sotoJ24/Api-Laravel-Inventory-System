@@ -9,6 +9,7 @@ use App\Models\Api\v1\Business;
 use App\Models\Api\v1\DailyBox;
 use App\Models\Api\v1\Header_ticket;
 use App\Models\User;
+use App\Models\Api\v1\CampusAmountControlBoxes;
 
 class Campus extends Model
 {
@@ -17,6 +18,7 @@ class Campus extends Model
                             'address',  //string
                             'phone', //string
                             'email' ,//string
+                            'consecutive',//bigInteger
                             'states_id',//foreign-key
                             'businesses_id'//foreign-key
     ];
@@ -33,7 +35,7 @@ class Campus extends Model
 
     public function campusBox()
     {
-        return $this->belongsTo(DailyBox::class);
+        return $this->hasMany(DailyBox::class);
     }
 
     public function campusUser()
@@ -46,6 +48,9 @@ class Campus extends Model
         return $this->hasMany(Header_ticket::class);
     }
 
-
+    public function campusAmountControlBoxes()
+    {
+        return $this->hasMany(CampusAmountControlBoxes::class);
+    }
 
 }

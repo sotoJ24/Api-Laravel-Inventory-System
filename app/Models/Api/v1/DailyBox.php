@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Api\v1\Campus;
 use App\Models\Api\v1\Status;
 use App\Models\Api\v1\Header_ticket;
+use App\Models\Api\v1\DailyBoxCampusAmountControlBoxes;
 
 class DailyBox extends Model
 {
@@ -15,20 +16,12 @@ class DailyBox extends Model
     protected $fillable = ['user_id', //FK
                            'openingDate', //date
                            'openingTime',
-                           'campus_id',
+                           'campus_id',//FK
                            'openingAmount',
-                           'amountByInscription',
-                           'amountByMonthy',
-                           'amountBySell',
-                           'amountByReservations',
-                           'amountByCredits',
-                           'amountBySinpe',
-                           'amountByTransfer',
-                           'amountByCash',
                            'closingDate',
                            'closingTime',
                            'observations',
-                           'statuses_id'
+                           'statuses_id'//FK
 
     ];
 
@@ -37,9 +30,14 @@ class DailyBox extends Model
          return $this->hasmany(User::class);
     }
 
+    public function DailyBoxesControlAmount()
+    {
+         return $this->hasmany(DailyBoxCampusAmountControlBoxes::class);
+    }
+
     public function campusBox()
     {
-         return $this->hasmany(Campus::class);
+         return $this->belongsTo(Campus::class);
     }
 
     public function statusBox()
