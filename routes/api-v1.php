@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\v1\SupplierController;
 use App\Http\Controllers\Api\v1\CustomerController;
 use App\Http\Controllers\Api\v1\UsersController;
 use App\Http\Controllers\Api\v1\DailyBoxController;
+use App\Http\Controllers\Api\v1\HeaderTicketController;
 
 
 /*
@@ -64,6 +65,11 @@ Route::apiResource('users',UsersController::class)->names('api.v1.users');
 Route::apiResource('dailybox',DailyBoxController::class)->names('api.v1.dailybox');
 Route::get('dailybox/statusBox/{statusBox}',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'StatusBox'])->name('api.v1.dailybox.status');
 Route::get('dailyboxDate',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'lookingDate'])->name('api.v1.dailybox.date');
+
+//{{-- HeaderTicket Routes --}}\\
+Route::apiResource('headerticket',HeaderTicketController::class)->names('api.v1.headerticket');
+Route::get('headerticket/statusHeader/{statusHeader}',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'StatusHeader'])->name('api.v1.headerTicket.status');
+Route::get('headerTicketDate',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'lookingDate'])->name('api.v1.headerTicket.date');
 
 
 //{{-- Super User Routes --}}\\

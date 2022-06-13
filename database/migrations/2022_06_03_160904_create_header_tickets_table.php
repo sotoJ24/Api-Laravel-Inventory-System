@@ -16,8 +16,8 @@ class CreateHeaderTicketsTable extends Migration
         Schema::create('header_tickets', function (Blueprint $table) {
             $table->id();
             $table->integer('consecutive');
-            $table->date('headerDate');
-            $table->string('transactionNumber');
+            $table->date('Date');
+            $table->integer('NumberDocumentPay');
             $table->unsignedBigInteger('customers_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('campus_id');

@@ -16,7 +16,7 @@ class CreateTicketDetailsTable extends Migration
         Schema::create('ticket_details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('article_id');
-            $table->double('amount');
+            $table->double('quantity');
             $table->double('salePrice');
             $table->double('subTotal');
             $table->unsignedBigInteger('headerTicket_id');

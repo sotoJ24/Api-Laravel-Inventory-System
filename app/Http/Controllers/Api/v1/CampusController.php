@@ -33,6 +33,7 @@ class CampusController extends Controller
             'address'  => 'required|string|nullable:campuses',
             'phone'  =>  'required|string|max:30|nullable:campuses',
             'email'  => 'required|string|max:100|nullable:campuses',
+            'consecutive' => 'required|numeric',
             'states_id'  => 'required|numeric',
             'businesses_id'  => 'required|numeric'
         ]);

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\Article_Supplier;
 use App\Models\Api\v1\UnitOfMeasure;
 use App\Models\Api\v1\InventoryLosse;
+use App\Models\Api\v1\Ticket_detail;
 
 class Article extends Model
 {
@@ -36,5 +37,9 @@ class Article extends Model
 
     public function inventoryLostDetail(){
         return $this->hasMany(InventoryLostDetail::class);
+    }
+
+    public function ticketDetail(){
+        return $this->belongsTo(Ticket_detail::class);
     }
 }
