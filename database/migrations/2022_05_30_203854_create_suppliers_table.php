@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Api\v1\Supplier;
+
 class CreateSuppliersTable extends Migration
 {
     /**
@@ -21,7 +21,7 @@ class CreateSuppliersTable extends Migration
             $table->string('sellerName',100)->nullable();
             $table->string('sellerPhoneNumber',30)->nullable();
             $table->unsignedBigInteger('statuses_id');
-
+            //FK
             $table->foreign('statuses_id')->references('id')->on('statuses');
             $table->timestamps();
         });

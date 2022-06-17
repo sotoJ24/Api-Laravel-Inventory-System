@@ -9,8 +9,11 @@ use App\Http\Controllers\Api\v1\BusinessController;
 use App\Http\Controllers\Api\v1\CampusController;
 use App\Http\Controllers\Api\v1\CustomerBusinessController;
 use App\Http\Controllers\Api\v1\SupplierController;
-use App\Http\Controllers\Api\v1\customerController;
+use App\Http\Controllers\Api\v1\CustomerController;
 use App\Http\Controllers\Api\v1\UsersController;
+use App\Http\Controllers\Api\v1\DailyBoxController;
+use App\Http\Controllers\Api\v1\HeaderTicketController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,15 +51,26 @@ Route::apiResource('campus',CampusController::class)->names('api.v1.campus');
 //{{-- CustomerBusinesses Routes --}}\\
 Route::apiResource('customers/business',CustomerBusinessController::class)->names('api.v1.customers.businesses');
 
-//{{-- Supplier Routes --}}\\
+// //{{-- Supplier Routes --}}\\
 Route::apiResource('suppliers',SupplierController::class)->names('api.v1.supplier');
 
 //{{-- Customer Routes --}}\\
-Route::apiResource('customers',customerController::class)->names('api.v1.customers');
-Route::get('customersInactive/{customer}',[\App\Http\Controllers\Api\v1\customerController::class,'InactiveCustomers'])->name('api.v1.customers.inactive');
+Route::apiResource('customers',CustomerController::class)->names('api.v1.customers');
+Route::get('customersInactive/{customer}',[\App\Http\Controllers\Api\v1\CustomerController::class,'InactiveCustomers'])->name('api.v1.customers.inactive');
 
 //{{-- Users Routes --}}\\
 Route::apiResource('users',UsersController::class)->names('api.v1.users');
+
+//{{-- DailyBox Routes --}}\\
+Route::apiResource('dailybox',DailyBoxController::class)->names('api.v1.dailybox');
+Route::get('dailybox/statusBox/{statusBox}',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'StatusBox'])->name('api.v1.dailybox.status');
+Route::get('dailyboxDate',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'lookingDate'])->name('api.v1.dailybox.date');
+
+//{{-- HeaderTicket Routes --}}\\
+Route::apiResource('headerticket',HeaderTicketController::class)->names('api.v1.headerticket');
+Route::get('headerticket/statusHeader/{statusHeader}',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'StatusHeader'])->name('api.v1.headerTicket.status');
+Route::get('headerTicketDate',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'lookingDate'])->name('api.v1.headerTicket.date');
+
 
 //{{-- Super User Routes --}}\\
 Route::apiResource('roots', RootController::class)->names('api.v1.roots');

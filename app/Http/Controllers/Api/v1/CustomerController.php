@@ -7,7 +7,7 @@ use App\Models\Api\v1\Customers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class customerController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.

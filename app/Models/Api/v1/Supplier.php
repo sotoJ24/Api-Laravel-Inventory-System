@@ -9,7 +9,6 @@ use App\Models\Api\v1\Status;
 class Supplier extends Model
 {
     use HasFactory;
-
     protected $fillable = ['companyName', //string
                            'phoneNumber',  //string
                            'email', //string
