@@ -26,19 +26,27 @@ class BusinessController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function findBusiness($super_user_id){
+        $business = Business::where('super_user_id',$super_user_id)->firstOrFail();
+        if($business)
+            return response()->json($business,200);
+        else{
+            return response()->json(['message'=>'not found'],404);
+
+        }
+    }
     public function store(Request $request)
     {
 
-         $validation = $request->validate([
+        $validation = $request->validate([
             'name' => 'required|string|max:50|unique:businesses',
-            'identifier' => 'required|string|max:20|unique:businesses',
+            'identifier' => 'string|max:20|unique:businesses',
             'statuses_id' => 'required|numeric',
             'super_user_id' => 'required|numeric',
-            'phone' => 'required|string|max:25',
-            'email' => 'required|string|max:100'
+            'phone' => 'string|max:25',
+            'email' => 'string|max:100'
 
-        ]);  
-
+        ]);
 
         $business = null;
         if($validation)
@@ -72,11 +80,11 @@ class BusinessController extends Controller
     {
         $validation = $request->validate([
             'name' => 'required|string|max:50|unique:businesses,name,'.$business->id,
-            'identifier' => 'required|string|max:20|unique:businesses,identifier,'.$business->id,
+            'identifier' => 'string|max:20|unique:businesses,identifier,'.$business->id,
             'statuses_id' => 'required|numeric',
             'super_user_id' => 'required|numeric',
-            'phone' => 'required|string|max:25',
-            'email' => 'required|string|max:100'
+            'phone' => 'string|max:25',
+            'email' => 'string|max:100'
 
         ]);
 
