@@ -20,6 +20,7 @@ class CreateCampusesTable extends Migration
             $table->string('address')->nullable();
             $table->string('phone',30)->nullable();
             $table->string('email',100)->nullable();
+            $table->bigInteger('consecutive');
             $table->unsignedBigInteger('states_id');
             $table->unsignedBigInteger('businesses_id');
             $table->timestamps();
@@ -27,7 +28,7 @@ class CreateCampusesTable extends Migration
             $table->foreign('states_id')->references('id')->on('statuses');
             $table->foreign('businesses_id')->references('id')->on('businesses');
         });
-        
+
     }
 
     /**

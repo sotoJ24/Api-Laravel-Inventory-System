@@ -18,8 +18,4 @@ class UnitOfMeasure extends Model
     public function articles(){
     return $this->hasMany(Article::class);
     }
-
-    public function inventoryLostDetail(){
-        return $this->hasMany(InventoryLostDetail::class);
-        }
 }

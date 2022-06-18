@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
+class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -186,8 +186,8 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Whoops\\' => 
         array (
@@ -331,8 +331,8 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -523,8 +523,13 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'App\\Http\\Controllers\\Api\\v1\\BusinessController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/BusinessController.php',
         'App\\Http\\Controllers\\Api\\v1\\CampusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CampusController.php',
         'App\\Http\\Controllers\\Api\\v1\\CustomerBusinessController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CustomerBusinessController.php',
+<<<<<<< HEAD
+=======
+        'App\\Http\\Controllers\\Api\\v1\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CustomerController.php',
+>>>>>>> fca759a10cef188cb908207610d6796589921e8d
         'App\\Http\\Controllers\\Api\\v1\\DailyBoxController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/DailyBoxController.php',
         'App\\Http\\Controllers\\Api\\v1\\HeaderInventoryLostController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/HeaderInventoryLostController.php',
+        'App\\Http\\Controllers\\Api\\v1\\HeaderTicketController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/HeaderTicketController.php',
         'App\\Http\\Controllers\\Api\\v1\\InventoryLostDetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/InventoryLostDetailController.php',
         'App\\Http\\Controllers\\Api\\v1\\InvoicingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/InvoicingController.php',
         'App\\Http\\Controllers\\Api\\v1\\ReservedController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/ReservedController.php',
@@ -532,9 +537,14 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'App\\Http\\Controllers\\Api\\v1\\RootController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/RootController.php',
         'App\\Http\\Controllers\\Api\\v1\\StatusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/StatusController.php',
         'App\\Http\\Controllers\\Api\\v1\\SupplierController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/SupplierController.php',
+        'App\\Http\\Controllers\\Api\\v1\\TicketDetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/TicketDetailController.php',
+        'App\\Http\\Controllers\\Api\\v1\\TicketPaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/TicketPaymentController.php',
         'App\\Http\\Controllers\\Api\\v1\\UnitOfMeasureController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/UnitOfMeasureController.php',
         'App\\Http\\Controllers\\Api\\v1\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/UsersController.php',
+<<<<<<< HEAD
         'App\\Http\\Controllers\\Api\\v1\\customerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/customerController.php',
+=======
+>>>>>>> fca759a10cef188cb908207610d6796589921e8d
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -550,10 +560,20 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'App\\Models\\Api\\v1\\Article_Supplier' => __DIR__ . '/../..' . '/app/Models/Api/v1/Article_Supplier.php',
         'App\\Models\\Api\\v1\\Business' => __DIR__ . '/../..' . '/app/Models/Api/v1/Business.php',
         'App\\Models\\Api\\v1\\Campus' => __DIR__ . '/../..' . '/app/Models/Api/v1/Campus.php',
+<<<<<<< HEAD
         'App\\Models\\Api\\v1\\CustomerBusiness' => __DIR__ . '/../..' . '/app/Models/Api/v1/CustomerBusiness.php',
         'App\\Models\\Api\\v1\\Customers' => __DIR__ . '/../..' . '/app/Models/Api/v1/Customers.php',
         'App\\Models\\Api\\v1\\DailyBox' => __DIR__ . '/../..' . '/app/Models/Api/v1/DailyBox.php',
+=======
+        'App\\Models\\Api\\v1\\CampusAmountControlBoxes' => __DIR__ . '/../..' . '/app/Models/Api/v1/CampusAmountControlBoxes.php',
+        'App\\Models\\Api\\v1\\CustomerBusiness' => __DIR__ . '/../..' . '/app/Models/Api/v1/CustomerBusiness.php',
+        'App\\Models\\Api\\v1\\Customers' => __DIR__ . '/../..' . '/app/Models/Api/v1/Customers.php',
+        'App\\Models\\Api\\v1\\DailyBox' => __DIR__ . '/../..' . '/app/Models/Api/v1/DailyBox.php',
+        'App\\Models\\Api\\v1\\DailyBoxCampusAmountControlBoxes' => __DIR__ . '/../..' . '/app/Models/Api/v1/DailyBoxCampusAmountControlBoxes.php',
+>>>>>>> fca759a10cef188cb908207610d6796589921e8d
         'App\\Models\\Api\\v1\\HeaderInventoryLost' => __DIR__ . '/../..' . '/app/Models/Api/v1/HeaderInventoryLost.php',
+        'App\\Models\\Api\\v1\\Header_ticket' => __DIR__ . '/../..' . '/app/Models/Api/v1/Header_ticket.php',
+        'App\\Models\\Api\\v1\\Header_ticket_payment' => __DIR__ . '/../..' . '/app/Models/Api/v1/Header_ticket_payment.php',
         'App\\Models\\Api\\v1\\InventoryLostDetail' => __DIR__ . '/../..' . '/app/Models/Api/v1/InventoryLostDetail.php',
         'App\\Models\\Api\\v1\\Invoicing' => __DIR__ . '/../..' . '/app/Models/Api/v1/Invoicing.php',
         'App\\Models\\Api\\v1\\PaymentsMethods' => __DIR__ . '/../..' . '/app/Models/Api/v1/PaymentsMethods.php',
@@ -562,7 +582,9 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'App\\Models\\Api\\v1\\Root' => __DIR__ . '/../..' . '/app/Models/Api/v1/Root.php',
         'App\\Models\\Api\\v1\\Status' => __DIR__ . '/../..' . '/app/Models/Api/v1/Status.php',
         'App\\Models\\Api\\v1\\Supplier' => __DIR__ . '/../..' . '/app/Models/Api/v1/Supplier.php',
+        'App\\Models\\Api\\v1\\Ticket_detail' => __DIR__ . '/../..' . '/app/Models/Api/v1/Ticket_detail.php',
         'App\\Models\\Api\\v1\\UnitOfMeasure' => __DIR__ . '/../..' . '/app/Models/Api/v1/UnitOfMeasure.php',
+        'App\\Models\\Api\\v1\\nameAmountControlBoxes' => __DIR__ . '/../..' . '/app/Models/Api/v1/nameAmountControlBoxes.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -918,6 +940,7 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'Facade\\Ignition\\Context\\LaravelConsoleContext' => __DIR__ . '/..' . '/facade/ignition/src/Context/LaravelConsoleContext.php',
         'Facade\\Ignition\\Context\\LaravelContextDetector' => __DIR__ . '/..' . '/facade/ignition/src/Context/LaravelContextDetector.php',
         'Facade\\Ignition\\Context\\LaravelRequestContext' => __DIR__ . '/..' . '/facade/ignition/src/Context/LaravelRequestContext.php',
+        'Facade\\Ignition\\Context\\LivewireRequestContext' => __DIR__ . '/..' . '/facade/ignition/src/Context/LivewireRequestContext.php',
         'Facade\\Ignition\\DumpRecorder\\Dump' => __DIR__ . '/..' . '/facade/ignition/src/DumpRecorder/Dump.php',
         'Facade\\Ignition\\DumpRecorder\\DumpHandler' => __DIR__ . '/..' . '/facade/ignition/src/DumpRecorder/DumpHandler.php',
         'Facade\\Ignition\\DumpRecorder\\DumpRecorder' => __DIR__ . '/..' . '/facade/ignition/src/DumpRecorder/DumpRecorder.php',
@@ -951,6 +974,7 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'Facade\\Ignition\\Logger\\FlareHandler' => __DIR__ . '/..' . '/facade/ignition/src/Logger/FlareHandler.php',
         'Facade\\Ignition\\Middleware\\AddDumps' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddDumps.php',
         'Facade\\Ignition\\Middleware\\AddEnvironmentInformation' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddEnvironmentInformation.php',
+        'Facade\\Ignition\\Middleware\\AddExceptionInformation' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddExceptionInformation.php',
         'Facade\\Ignition\\Middleware\\AddGitInformation' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddGitInformation.php',
         'Facade\\Ignition\\Middleware\\AddJobInformation' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddJobInformation.php',
         'Facade\\Ignition\\Middleware\\AddLogs' => __DIR__ . '/..' . '/facade/ignition/src/Middleware/AddLogs.php',
@@ -975,6 +999,8 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'Facade\\Ignition\\SolutionProviders\\RunningLaravelDuskInProductionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/RunningLaravelDuskInProductionProvider.php',
         'Facade\\Ignition\\SolutionProviders\\SolutionProviderRepository' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/SolutionProviderRepository.php',
         'Facade\\Ignition\\SolutionProviders\\TableNotFoundSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/TableNotFoundSolutionProvider.php',
+        'Facade\\Ignition\\SolutionProviders\\UndefinedLivewireMethodSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/UndefinedLivewireMethodSolutionProvider.php',
+        'Facade\\Ignition\\SolutionProviders\\UndefinedLivewirePropertySolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/UndefinedLivewirePropertySolutionProvider.php',
         'Facade\\Ignition\\SolutionProviders\\UndefinedPropertySolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/UndefinedPropertySolutionProvider.php',
         'Facade\\Ignition\\SolutionProviders\\UndefinedVariableSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/UndefinedVariableSolutionProvider.php',
         'Facade\\Ignition\\SolutionProviders\\UnknownValidationSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/UnknownValidationSolutionProvider.php',
@@ -987,11 +1013,14 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'Facade\\Ignition\\Solutions\\SolutionTransformer' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/SolutionTransformer.php',
         'Facade\\Ignition\\Solutions\\SuggestCorrectVariableNameSolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/SuggestCorrectVariableNameSolution.php',
         'Facade\\Ignition\\Solutions\\SuggestImportSolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/SuggestImportSolution.php',
+        'Facade\\Ignition\\Solutions\\SuggestLivewireMethodNameSolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/SuggestLivewireMethodNameSolution.php',
+        'Facade\\Ignition\\Solutions\\SuggestLivewirePropertyNameSolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/SuggestLivewirePropertyNameSolution.php',
         'Facade\\Ignition\\Solutions\\SuggestUsingCorrectDbNameSolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/SuggestUsingCorrectDbNameSolution.php',
         'Facade\\Ignition\\Solutions\\UseDefaultValetDbCredentialsSolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/UseDefaultValetDbCredentialsSolution.php',
         'Facade\\Ignition\\Support\\ComposerClassMap' => __DIR__ . '/..' . '/facade/ignition/src/Support/ComposerClassMap.php',
         'Facade\\Ignition\\Support\\FakeComposer' => __DIR__ . '/..' . '/facade/ignition/src/Support/FakeComposer.php',
         'Facade\\Ignition\\Support\\LaravelVersion' => __DIR__ . '/..' . '/facade/ignition/src/Support/LaravelVersion.php',
+        'Facade\\Ignition\\Support\\LivewireComponentParser' => __DIR__ . '/..' . '/facade/ignition/src/Support/LivewireComponentParser.php',
         'Facade\\Ignition\\Support\\Packagist\\Package' => __DIR__ . '/..' . '/facade/ignition/src/Support/Packagist/Package.php',
         'Facade\\Ignition\\Support\\Packagist\\Packagist' => __DIR__ . '/..' . '/facade/ignition/src/Support/Packagist/Packagist.php',
         'Facade\\Ignition\\Support\\SentReports' => __DIR__ . '/..' . '/facade/ignition/src/Support/SentReports.php',
@@ -5326,6 +5355,7 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'Symfony\\Component\\String\\Slugger\\AsciiSlugger' => __DIR__ . '/..' . '/symfony/string/Slugger/AsciiSlugger.php',
         'Symfony\\Component\\String\\Slugger\\SluggerInterface' => __DIR__ . '/..' . '/symfony/string/Slugger/SluggerInterface.php',
         'Symfony\\Component\\String\\UnicodeString' => __DIR__ . '/..' . '/symfony/string/UnicodeString.php',
+        'Symfony\\Component\\Translation\\CatalogueMetadataAwareInterface' => __DIR__ . '/..' . '/symfony/translation/CatalogueMetadataAwareInterface.php',
         'Symfony\\Component\\Translation\\Catalogue\\AbstractOperation' => __DIR__ . '/..' . '/symfony/translation/Catalogue/AbstractOperation.php',
         'Symfony\\Component\\Translation\\Catalogue\\MergeOperation' => __DIR__ . '/..' . '/symfony/translation/Catalogue/MergeOperation.php',
         'Symfony\\Component\\Translation\\Catalogue\\OperationInterface' => __DIR__ . '/..' . '/symfony/translation/Catalogue/OperationInterface.php',
@@ -5387,6 +5417,7 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'Symfony\\Component\\Translation\\Loader\\QtFileLoader' => __DIR__ . '/..' . '/symfony/translation/Loader/QtFileLoader.php',
         'Symfony\\Component\\Translation\\Loader\\XliffFileLoader' => __DIR__ . '/..' . '/symfony/translation/Loader/XliffFileLoader.php',
         'Symfony\\Component\\Translation\\Loader\\YamlFileLoader' => __DIR__ . '/..' . '/symfony/translation/Loader/YamlFileLoader.php',
+        'Symfony\\Component\\Translation\\LocaleSwitcher' => __DIR__ . '/..' . '/symfony/translation/LocaleSwitcher.php',
         'Symfony\\Component\\Translation\\LoggingTranslator' => __DIR__ . '/..' . '/symfony/translation/LoggingTranslator.php',
         'Symfony\\Component\\Translation\\MessageCatalogue' => __DIR__ . '/..' . '/symfony/translation/MessageCatalogue.php',
         'Symfony\\Component\\Translation\\MessageCatalogueInterface' => __DIR__ . '/..' . '/symfony/translation/MessageCatalogueInterface.php',
@@ -5487,7 +5518,6 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
         'Symfony\\Contracts\\Service\\ServiceSubscriberTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceSubscriberTrait.php',
         'Symfony\\Contracts\\Service\\Test\\ServiceLocatorTest' => __DIR__ . '/..' . '/symfony/service-contracts/Test/ServiceLocatorTest.php',
         'Symfony\\Contracts\\Translation\\LocaleAwareInterface' => __DIR__ . '/..' . '/symfony/translation-contracts/LocaleAwareInterface.php',
-        'Symfony\\Contracts\\Translation\\Test\\TranslatorTest' => __DIR__ . '/..' . '/symfony/translation-contracts/Test/TranslatorTest.php',
         'Symfony\\Contracts\\Translation\\TranslatableInterface' => __DIR__ . '/..' . '/symfony/translation-contracts/TranslatableInterface.php',
         'Symfony\\Contracts\\Translation\\TranslatorInterface' => __DIR__ . '/..' . '/symfony/translation-contracts/TranslatorInterface.php',
         'Symfony\\Contracts\\Translation\\TranslatorTrait' => __DIR__ . '/..' . '/symfony/translation-contracts/TranslatorTrait.php',
@@ -5648,10 +5678,10 @@ class ComposerStaticInitd239219ca32660ae495ddae1bdff9954
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd239219ca32660ae495ddae1bdff9954::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd239219ca32660ae495ddae1bdff9954::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd239219ca32660ae495ddae1bdff9954::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitd239219ca32660ae495ddae1bdff9954::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit94b34e6815d269dbc0596162ee1581ff::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit94b34e6815d269dbc0596162ee1581ff::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit94b34e6815d269dbc0596162ee1581ff::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit94b34e6815d269dbc0596162ee1581ff::$classMap;
 
         }, null, ClassLoader::class);
     }

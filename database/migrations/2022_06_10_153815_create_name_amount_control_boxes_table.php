@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDailyBoxesTable extends Migration
+class CreateNameAmountControlBoxesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateDailyBoxesTable extends Migration
      */
     public function up()
     {
-        Schema::create('daily_boxes', function (Blueprint $table) {
+        Schema::create('name_amount_control_boxes', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateDailyBoxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('daily_boxes');
+        Schema::dropIfExists('name_amount_control_boxes');
     }
 }

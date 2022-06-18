@@ -11,6 +11,8 @@ use App\Models\Api\v1\HeaderInventoryLost;
 use App\Models\Api\v1\Status;
 use App\Models\Api\v1\Rol;
 use App\Models\Api\v1\Campus;
+use App\Models\Api\v1\DailyBox;
+use App\Models\Api\v1\Header_ticket;
 
 class User extends Authenticatable
 {
@@ -25,13 +27,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'IdRol',
-        'campus_Id',
+        'rol_id',
+        'campus_id',
         'statuses_id',
 
     ];
 
-    public function statusUser()
+    public function StatusUser()
     {
         return $this->belongsTo(Status::class);
     }
@@ -41,11 +43,20 @@ class User extends Authenticatable
         return $this->belongsTo(Rol::class);
     }
 
-    public function campusUser()
+    public function CampusUser()
     {
         return $this->belongsTo(Campus::class);
     }
 
+    public function UserBox()
+    {
+        return $this->belongsTo(DailyBox::class);
+    }
+
+    public function HeaderTicketUser()
+    {
+        return $this->hasMany(Header_ticket::class);
+    }
 
 
     /**

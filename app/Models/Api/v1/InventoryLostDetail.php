@@ -13,9 +13,10 @@ class InventoryLostDetail extends Model
     use HasFactory;
     protected $fillable =['headerInventoryLost_id',
                           'article_id',
-                          'unitOfMeasure_id',
+                          'salePrice',
                           'quantity',
-                          'amount'
+                          'amount',
+                          'observation'
 
     ];
     public function headerInventoryLost()
@@ -28,8 +29,4 @@ class InventoryLostDetail extends Model
         return $this->belongsTo(Article::class);
     }
 
-    public function unitOfMeasure()
-    {
-        return $this->belongsTo(UnitOfMeasure::class);
-    }
 }

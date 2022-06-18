@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Api\v1\Supplier;
 use Illuminate\Http\Request;
+use App\Models\Api\v1\Supplier;
 
 class SupplierController extends Controller
 {
@@ -15,7 +15,6 @@ class SupplierController extends Controller
      */
     public function index()
     {
-
         $supplier = Supplier::query('statuses_id')->get();
         return response()->json($supplier,200);
     }
@@ -45,16 +44,15 @@ class SupplierController extends Controller
             return response()->json($supplier,201);
         }
         return response()->json($supplier,417);
-
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Api\v1\Supplier  $supplier
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Supplier $supplier)
+    public function show($id)
     {
         //
     }
@@ -63,7 +61,7 @@ class SupplierController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Api\v1\Supplier  $supplier
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Supplier $supplier)
@@ -79,13 +77,12 @@ class SupplierController extends Controller
 
         $supplier->update($request->all());
         return response()->json($supplier,200);
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Api\v1\Supplier  $supplier
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, $id)
