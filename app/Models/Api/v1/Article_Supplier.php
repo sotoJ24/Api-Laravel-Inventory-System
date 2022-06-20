@@ -10,7 +10,7 @@ use App\Models\Api\v1\Article;
 class Article_Supplier extends Model
 {
     use HasFactory;
-    protected $fillable = ['supplier_id', //Foreing
+    protected $fillable = [//'supplier_id', //Foreing
                             'article_id'  //Foreing
 
     ];

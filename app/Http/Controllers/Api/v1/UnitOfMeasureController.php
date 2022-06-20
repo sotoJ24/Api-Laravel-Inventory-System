@@ -27,7 +27,18 @@ class UnitOfMeasureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+                    'symbol' => 'required|string',
+                    'description' => 'required|string',
+                    'unitType' => 'required|string'
+        ]);
+        $unitOfMeasure = null;
+        if($validation)
+        {
+            $unitOfMeasure = UnitOfMeasure::create($request->all());
+            return response()->json($unitOfMeasure,201);
+        }
+        return response()->json($unitOfMeasure,417);
     }
 
     /**

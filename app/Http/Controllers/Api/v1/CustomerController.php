@@ -16,11 +16,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = DB::table('customers')
-            ->join('customer_businesses','customers.customer_businesses','=','customer_businesses.id')
-            ->select('customer_businesses.id','customers.limitedCredit','customers.timeCredit', 'customers.identifier','customers.IdType','customers.customer_businesses','customers.statuses_id')
-            ->where('customers.statuses_id',4)->orderBy('identifier', 'ASC')
-            ->get();
+        $customers = Customers::where('statuses_id',4)->get();
         return response()->json($customers,200);
     }
 
