@@ -16,7 +16,8 @@ class InventoryLostDetail extends Model
                           'salePrice',
                           'quantity',
                           'amount',
-                          'observation'
+                          'observation',
+                          'date'
 
     ];
     public function headerInventoryLost()

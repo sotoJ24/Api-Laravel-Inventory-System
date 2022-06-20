@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('barcode',50)->unique();
             $table->unsignedBigInteger('unitOfMeasure_id');     //foreing key
+            $table->unsignedBigInteger('campuses_id');
             $table->string('name',100);
             $table->double('purchasePrice',15,4);
             $table->double('salePrice',15,4);
@@ -27,6 +28,7 @@ class CreateArticlesTable extends Migration
             $table->timestamps();
        //Foreing keys
             $table->foreign('unitOfMeasure_id')->references('id')->on('unit_of_measures');
+            $table->foreign('campuses_id')->references('id')->on('campuses');
         });
     }
 

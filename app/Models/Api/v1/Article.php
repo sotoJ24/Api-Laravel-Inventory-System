@@ -9,19 +9,20 @@ use App\Models\Api\v1\Article_Supplier;
 use App\Models\Api\v1\UnitOfMeasure;
 use App\Models\Api\v1\InventoryLosse;
 use App\Models\Api\v1\Ticket_detail;
+use App\Models\Api\v1\Campus;
 
 class Article extends Model
 {
     use HasFactory;
     protected $fillable = ['barcode',              //String
-                           'unitOfMeasure_id',    // foreing key
+                           'unitOfMeasure_id',
+                           'campuses_id',    // foreing key
                            'name',               //string
                            'purchasePrice',     //double
                            'salePrice',        // precio
                            'states',          // enum
                            'stock',          //double
                            'minimumStock',  //double
-                           'supplier_id'   // foreing key
     ];
     const Enable = 1;
     const Disable = 0;
@@ -29,6 +30,11 @@ class Article extends Model
     public function unitOfMeasure()
     {
         return $this->belongsTo(UnitOfMeasure::class);
+    }
+
+    public function articleCampus()
+    {
+        return $this->belongsTo(Campus::class);
     }
 
     public function articleSupplier(){

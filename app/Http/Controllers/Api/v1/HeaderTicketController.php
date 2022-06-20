@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Api\v1\Campus;
 use App\Models\Api\v1\Header_ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HeaderTicketController extends Controller
 {
@@ -18,20 +20,29 @@ class HeaderTicketController extends Controller
 
     }
 
-    public function StatusHeader($status)
-    {
-        $headerticket = Header_ticket::where('user_id',$status)->get();
-        return response()->json($headerticket,200);
+
+    public function searchCampusHeaderTicketByDateRanges(Request $request){
+        $headerTicket = DB::table('header_tickets')
+              ->join('customers','header_tickets.customers_id','=','customers.id')
+              ->join('users','header_tickets.user_id','=','users.id')
+              ->join('campuses','header_tickets.campus_id','=','campuses.id')
+              ->join('statuses','header_tickets.status_id','=','statuses.id')
+              ->join('daily_boxes','header_tickets.dailyBox_id','=','daily_boxes.id')
+              ->select('header_tickets.id','header_tickets.consecutive', 'header_tickets.Date', 'header_tickets.NumberDocumentPay', 'customers.identifier as customerIdentifier', 'users.name as userName', 'campuses.name as campusName', 'statuses.name as status','daily_boxes.openingDate as dailyBoxDate','header_tickets.subTotal','header_tickets.IVA', 'header_tickets.IVA', 'header_tickets.Discount','header_tickets.Total')
+              ->where('header_tickets.campus_id',$request->campus)
+              ->whereBetween('Date',[$request->from, $request->until])
+              ->get();
+        return response()->json($headerTicket,200);
     }
 
-    public function lookingDate(Request $request)
+
+    public function showAllHeaderByStatus($status)
     {
-        $headerticket = Header_ticket::whereBetween('Date', [$request->from])->get();
-        if (empty($headerticket))
-            return response()->json(['message' => 'date not found'], 404);
-        else
-            return response()->json($headerticket, 200);
+        $headerTicket = Header_ticket::where('status_id',$status)->get();
+        return response()->json($headerTicket,200);
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -56,13 +67,13 @@ class HeaderTicketController extends Controller
             'Total' => 'required|numeric'
         ]);
 
-        $headerticket = null;
+        $headerTicket = null;
         if($validation)
         {
-            $headerticket = Header_ticket::create($request->all());
-            return response()->json($headerticket,201);
+            $headerTicket = Header_ticket::create($request->all());
+            return response()->json($headerTicket,201);
         }
-        return response()->json($headerticket,417);
+        return response()->json($headerTicket,417);
 
 
     }
@@ -85,9 +96,21 @@ class HeaderTicketController extends Controller
      * @param  \App\Models\Api\v1\Header_ticket  $header_ticket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Header_ticket $header_ticket)
+    public function update(Request $request, $id)
     {
-        //
+        $validation = $request->validate([
+            'status_id' => 'required|numeric'
+        ]);
+
+        if($validation)
+        {
+            $headerTicket=Header_ticket::findOrFail($id);
+            $headerTicket->status_id=$request->status_id;
+            $headerTicket->save();
+            return response()->json($headerTicket,200);
+        }
+        return response()->json([],406);
+
     }
 
     /**
@@ -96,8 +119,8 @@ class HeaderTicketController extends Controller
      * @param  \App\Models\Api\v1\Header_ticket  $header_ticket
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Header_ticket $header_ticket)
+    public function destroy(Request $request, $id)
     {
-        //
+
     }
 }
