@@ -24,18 +24,6 @@ class ComposerAutoloaderInit94b34e6815d269dbc0596162ee1581ff
 
         require __DIR__ . '/platform_check.php';
 
-<<<<<<< HEAD
-        spl_autoload_register(array('ComposerAutoloaderInitd239219ca32660ae495ddae1bdff9954', 'loadClassLoader'), true, true);
-        self::$loader = $loader = new \Composer\Autoload\ClassLoader(\dirname(__DIR__));
-        spl_autoload_unregister(array('ComposerAutoloaderInitd239219ca32660ae495ddae1bdff9954', 'loadClassLoader'));
-
-        require __DIR__ . '/autoload_static.php';
-        \Composer\Autoload\ComposerStaticInitd239219ca32660ae495ddae1bdff9954::getInitializer($loader)();
-
-        $loader->register(true);
-
-        $includeFiles = \Composer\Autoload\ComposerStaticInitd239219ca32660ae495ddae1bdff9954::$files;
-=======
         spl_autoload_register(array('ComposerAutoloaderInit94b34e6815d269dbc0596162ee1581ff', 'loadClassLoader'), true, true);
         self::$loader = $loader = new \Composer\Autoload\ClassLoader(\dirname(__DIR__));
         spl_autoload_unregister(array('ComposerAutoloaderInit94b34e6815d269dbc0596162ee1581ff', 'loadClassLoader'));
@@ -46,7 +34,6 @@ class ComposerAutoloaderInit94b34e6815d269dbc0596162ee1581ff
         $loader->register(true);
 
         $includeFiles = \Composer\Autoload\ComposerStaticInit94b34e6815d269dbc0596162ee1581ff::$files;
->>>>>>> fca759a10cef188cb908207610d6796589921e8d
         foreach ($includeFiles as $fileIdentifier => $file) {
             composerRequire94b34e6815d269dbc0596162ee1581ff($fileIdentifier, $file);
         }
@@ -60,11 +47,7 @@ class ComposerAutoloaderInit94b34e6815d269dbc0596162ee1581ff
  * @param string $file
  * @return void
  */
-<<<<<<< HEAD
-function composerRequired239219ca32660ae495ddae1bdff9954($fileIdentifier, $file)
-=======
 function composerRequire94b34e6815d269dbc0596162ee1581ff($fileIdentifier, $file)
->>>>>>> fca759a10cef188cb908207610d6796589921e8d
 {
     if (empty($GLOBALS['__composer_autoload_files'][$fileIdentifier])) {
         $GLOBALS['__composer_autoload_files'][$fileIdentifier] = true;
