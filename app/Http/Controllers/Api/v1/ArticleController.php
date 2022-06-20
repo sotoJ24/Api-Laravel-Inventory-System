@@ -16,11 +16,11 @@ class ArticleController extends Controller
      */
     public function index()
     {
-
         $articles = DB::table('articles')
             ->join('unit_of_measures','articles.unitOfMeasure_id','=','unit_of_measures.id')
-            ->select('unit_of_measures.description','articles.id','articles.barcode', 'articles.name', 'articles.purchasePrice','articles.salePrice','articles.stock','articles.minimumStock')
-            ->where('articles.states',1)->orderBy('name', 'ASC')
+            ->join('campuses','articles.campuses_id','=','campuses.id')
+            ->select('unit_of_measures.description','campuses.name','articles.id','articles.barcode', 'articles.name', 'articles.purchasePrice','articles.salePrice','articles.stock','articles.minimumStock')
+            ->where('articles.states',1)->orderBy('articles.name', 'ASC')
             ->get();
         return response()->json($articles,200);
     }
@@ -36,6 +36,7 @@ class ArticleController extends Controller
         $validation = $request->validate([
             'barcode' => 'required|string|max:50|unique:articles',
             'unitOfMeasure_id' => 'required|integer',
+            'campuses_id' => 'required|integer',
             'name' => 'required|string|max:100',
             'purchasePrice' => 'required|numeric',
             'salePrice' => 'required|numeric',
@@ -81,7 +82,8 @@ class ArticleController extends Controller
     public function getArticleEdit($id){
         $code = DB::table('articles')
             ->join('unit_of_measures', 'articles.unitOfMeasure_id','=','unit_of_measures.id')
-            ->select('unit_of_measures.id as unitIdInArticle','unit_of_measures.description','articles.id', 'articles.barcode',
+            ->join('campuses','articles.campuses_id','=','campuses.id')
+            ->select('unit_of_measures.id as unitIdInArticle', 'campuses.id as campusID','unit_of_measures.description','campuses.name','articles.id', 'articles.barcode',
                     'articles.name','articles.purchasePrice','articles.salePrice','articles.stock','articles.minimumStock')
             ->where('articles.id',$id)
             ->get();
@@ -91,9 +93,10 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
 
-        $request->validate([
-            'barcode' => 'required|string|max:50|unique:articles,id,'.$article->id,
+        $validation = $request->validate([
+            'barcode' => 'required|string|max:50|unique:articles',
             'unitOfMeasure_id' => 'required|integer',
+            'campuses_id' => 'required|integer',
             'name' => 'required|string|max:100',
             'purchasePrice' => 'required|numeric',
             'salePrice' => 'required|numeric',

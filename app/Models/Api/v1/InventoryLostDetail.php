@@ -15,7 +15,8 @@ class InventoryLostDetail extends Model
                           'article_id',
                           'unitOfMeasure_id',
                           'quantity',
-                          'amount'
+                          'amount',
+                          'date'
 
     ];
     public function headerInventoryLost()

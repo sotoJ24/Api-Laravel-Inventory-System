@@ -31,7 +31,7 @@ class DailyBoxController extends Controller
 
     public function lookingDate(Request $request)
     {
-        $dailyBox = DailyBox::whereBetween('closingDate',[$request->from, $request->until])->get();
+        $dailyBox = DailyBox::whereBetween('openingDate',[$request->from, $request->until])->get();
         if(empty($dailyBox))
             return response()->json(['message'=>'date not found'],404);
         else

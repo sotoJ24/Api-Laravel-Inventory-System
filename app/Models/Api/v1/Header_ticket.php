@@ -18,7 +18,7 @@ class Header_ticket extends Model
     protected $fillable = [
                 'consecutive',
                 'Date',
-                'transactionNumber',
+                'NumberDocumentPay',
                 'customers_id', //FK
                 'user_id', //FK
                 'campus_id',//FK

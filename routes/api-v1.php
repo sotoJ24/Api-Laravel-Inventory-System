@@ -13,7 +13,7 @@ use App\Http\Controllers\Api\v1\CustomerController;
 use App\Http\Controllers\Api\v1\UsersController;
 use App\Http\Controllers\Api\v1\DailyBoxController;
 use App\Http\Controllers\Api\v1\HeaderTicketController;
-
+use App\Http\Controllers\Api\v1\TicketDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,9 +68,12 @@ Route::get('dailyboxDate',[\App\Http\Controllers\Api\v1\DailyBoxController::clas
 
 //{{-- HeaderTicket Routes --}}\\
 Route::apiResource('headerticket',HeaderTicketController::class)->names('api.v1.headerticket');
-Route::get('headerticket/statusHeader/{statusHeader}',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'StatusHeader'])->name('api.v1.headerTicket.status');
-Route::get('headerTicketDate',[\App\Http\Controllers\Api\v1\DailyBoxController::class,'lookingDate'])->name('api.v1.headerTicket.date');
+Route::get('headerticket/statusHeader/{statusHeader}',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'showAllHeaderByStatus'])->name('api.v1.headerTicket.status');
+Route::get('headerTicketDate',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'lookingDate'])->name('api.v1.headerTicket.date');
+Route::get('headerTicket/DateAndCampus',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'searchCampusHeaderTicketByDateRanges'])->name('api.v1.headerTicket.showCampusAndDate');
 
+//{{-- TicketDetail Routes --}}\\
+Route::apiResource('ticketDetail',TicketDetailController::class)->names('api.v1.tickedDetail');
 
 //{{-- Super User Routes --}}\\
 Route::apiResource('roots', RootController::class)->names('api.v1.roots');
