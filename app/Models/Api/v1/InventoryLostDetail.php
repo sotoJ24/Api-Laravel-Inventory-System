@@ -14,7 +14,6 @@ class InventoryLostDetail extends Model
     protected $fillable =['headerInventoryLost_id',
                           'article_id',
                           'salePrice',
-                          'unitOfMeasure_id',
                           'quantity',
                           'amount',
                           'observation',
@@ -31,8 +30,4 @@ class InventoryLostDetail extends Model
         return $this->belongsTo(Article::class);
     }
 
-    public function unitOfMeasure()
-    {
-        return $this->belongsTo(UnitOfMeasure::class);
-    }
 }

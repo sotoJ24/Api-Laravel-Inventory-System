@@ -523,7 +523,10 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         'App\\Http\\Controllers\\Api\\v1\\BusinessController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/BusinessController.php',
         'App\\Http\\Controllers\\Api\\v1\\CampusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CampusController.php',
         'App\\Http\\Controllers\\Api\\v1\\CustomerBusinessController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CustomerBusinessController.php',
+<<<<<<< HEAD
+=======
         'App\\Http\\Controllers\\Api\\v1\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CustomerController.php',
+>>>>>>> fca759a10cef188cb908207610d6796589921e8d
         'App\\Http\\Controllers\\Api\\v1\\DailyBoxController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/DailyBoxController.php',
         'App\\Http\\Controllers\\Api\\v1\\HeaderInventoryLostController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/HeaderInventoryLostController.php',
         'App\\Http\\Controllers\\Api\\v1\\HeaderTicketController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/HeaderTicketController.php',
@@ -538,6 +541,10 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         'App\\Http\\Controllers\\Api\\v1\\TicketPaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/TicketPaymentController.php',
         'App\\Http\\Controllers\\Api\\v1\\UnitOfMeasureController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/UnitOfMeasureController.php',
         'App\\Http\\Controllers\\Api\\v1\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/UsersController.php',
+<<<<<<< HEAD
+        'App\\Http\\Controllers\\Api\\v1\\customerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/customerController.php',
+=======
+>>>>>>> fca759a10cef188cb908207610d6796589921e8d
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -553,11 +560,17 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         'App\\Models\\Api\\v1\\Article_Supplier' => __DIR__ . '/../..' . '/app/Models/Api/v1/Article_Supplier.php',
         'App\\Models\\Api\\v1\\Business' => __DIR__ . '/../..' . '/app/Models/Api/v1/Business.php',
         'App\\Models\\Api\\v1\\Campus' => __DIR__ . '/../..' . '/app/Models/Api/v1/Campus.php',
+<<<<<<< HEAD
+        'App\\Models\\Api\\v1\\CustomerBusiness' => __DIR__ . '/../..' . '/app/Models/Api/v1/CustomerBusiness.php',
+        'App\\Models\\Api\\v1\\Customers' => __DIR__ . '/../..' . '/app/Models/Api/v1/Customers.php',
+        'App\\Models\\Api\\v1\\DailyBox' => __DIR__ . '/../..' . '/app/Models/Api/v1/DailyBox.php',
+=======
         'App\\Models\\Api\\v1\\CampusAmountControlBoxes' => __DIR__ . '/../..' . '/app/Models/Api/v1/CampusAmountControlBoxes.php',
         'App\\Models\\Api\\v1\\CustomerBusiness' => __DIR__ . '/../..' . '/app/Models/Api/v1/CustomerBusiness.php',
         'App\\Models\\Api\\v1\\Customers' => __DIR__ . '/../..' . '/app/Models/Api/v1/Customers.php',
         'App\\Models\\Api\\v1\\DailyBox' => __DIR__ . '/../..' . '/app/Models/Api/v1/DailyBox.php',
         'App\\Models\\Api\\v1\\DailyBoxCampusAmountControlBoxes' => __DIR__ . '/../..' . '/app/Models/Api/v1/DailyBoxCampusAmountControlBoxes.php',
+>>>>>>> fca759a10cef188cb908207610d6796589921e8d
         'App\\Models\\Api\\v1\\HeaderInventoryLost' => __DIR__ . '/../..' . '/app/Models/Api/v1/HeaderInventoryLost.php',
         'App\\Models\\Api\\v1\\Header_ticket' => __DIR__ . '/../..' . '/app/Models/Api/v1/Header_ticket.php',
         'App\\Models\\Api\\v1\\Header_ticket_payment' => __DIR__ . '/../..' . '/app/Models/Api/v1/Header_ticket_payment.php',

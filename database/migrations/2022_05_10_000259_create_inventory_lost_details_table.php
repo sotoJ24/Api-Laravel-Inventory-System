@@ -18,7 +18,6 @@ class CreateInventoryLostDetailsTable extends Migration
             $table->unsignedBigInteger('headerInventoryLost_id');
             $table->unsignedBigInteger('article_id');
             $table->double('salePrice',5,3);
-            $table->unsignedBigInteger('unitOfMeasure_id');   //foreing key
             $table->double('quantity',5,3);
             $table->double('amount',5,3);
             $table->text('observation');
@@ -26,7 +25,6 @@ class CreateInventoryLostDetailsTable extends Migration
             //Foreing keys
             $table->foreign('headerInventoryLost_id')->references('id')->on('header_inventory_losts');
             $table->foreign('article_id')->references('id')->on('articles');
-            $table->foreign('unitOfMeasure_id')->references('id')->on('unit_of_measures');
         });
     }
 

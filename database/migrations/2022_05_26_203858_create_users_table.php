@@ -19,12 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('name',72);
             $table->string('email',96);
             $table->string('password',30);
-            $table->unsignedBigInteger('IdRol');
-            $table->unsignedBigInteger('campus_Id');
+            $table->unsignedBigInteger('rol_id');
+            $table->unsignedBigInteger('campus_id');
             $table->unsignedBigInteger('statuses_id');
             //FK
-            $table->foreign('IdRol')->references('id')->on('rols');
-            $table->foreign('campus_Id')->references('id')->on('campuses');
+            $table->foreign('rol_id')->references('id')->on('rols');
+            $table->foreign('campus_id')->references('id')->on('campuses');
             $table->foreign('statuses_id')->references('id')->on('statuses');
             $table->rememberToken();
             $table->timestamps();

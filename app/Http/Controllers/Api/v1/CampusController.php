@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api\v1;
-
+use App\Models\Api\v1\Business;
 use App\Http\Controllers\Controller;
 use App\Models\Api\v1\Campus;
 use Illuminate\Http\Request;
@@ -19,7 +19,21 @@ class CampusController extends Controller
         $campus = Campus::where('states_id',4)->get();
         return response()->json($campus,200);
     }
+    public function getallCampusesByCompany($super_user_id){
+        $business = Business::where('super_user_id',$super_user_id)->get();
+        $campus = Campus::where('businesses_id',$business[0]['id'])->get();
+        return response()->json($campus,200);
 
+    }
+    public function getSuperUserId($id){
+        $campus = Campus::where('id',$id)->get();
+        $business = Business::where('id',$campus[0]['businesses_id'])->select('super_user_id')->get();
+        return response()->json($business,200);
+    }
+    public function getCampusEdit($id){
+        $campus = Campus::find($id);
+        return response()->json($campus,200);
+    }
     /**
      * Store a newly created resource in storage.
      *

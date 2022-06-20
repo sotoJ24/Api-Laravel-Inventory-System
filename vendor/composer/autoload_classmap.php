@@ -13,7 +13,10 @@ return array(
     'App\\Http\\Controllers\\Api\\v1\\BusinessController' => $baseDir . '/app/Http/Controllers/Api/v1/BusinessController.php',
     'App\\Http\\Controllers\\Api\\v1\\CampusController' => $baseDir . '/app/Http/Controllers/Api/v1/CampusController.php',
     'App\\Http\\Controllers\\Api\\v1\\CustomerBusinessController' => $baseDir . '/app/Http/Controllers/Api/v1/CustomerBusinessController.php',
+<<<<<<< HEAD
+=======
     'App\\Http\\Controllers\\Api\\v1\\CustomerController' => $baseDir . '/app/Http/Controllers/Api/v1/CustomerController.php',
+>>>>>>> fca759a10cef188cb908207610d6796589921e8d
     'App\\Http\\Controllers\\Api\\v1\\DailyBoxController' => $baseDir . '/app/Http/Controllers/Api/v1/DailyBoxController.php',
     'App\\Http\\Controllers\\Api\\v1\\HeaderInventoryLostController' => $baseDir . '/app/Http/Controllers/Api/v1/HeaderInventoryLostController.php',
     'App\\Http\\Controllers\\Api\\v1\\HeaderTicketController' => $baseDir . '/app/Http/Controllers/Api/v1/HeaderTicketController.php',
@@ -28,6 +31,10 @@ return array(
     'App\\Http\\Controllers\\Api\\v1\\TicketPaymentController' => $baseDir . '/app/Http/Controllers/Api/v1/TicketPaymentController.php',
     'App\\Http\\Controllers\\Api\\v1\\UnitOfMeasureController' => $baseDir . '/app/Http/Controllers/Api/v1/UnitOfMeasureController.php',
     'App\\Http\\Controllers\\Api\\v1\\UsersController' => $baseDir . '/app/Http/Controllers/Api/v1/UsersController.php',
+<<<<<<< HEAD
+    'App\\Http\\Controllers\\Api\\v1\\customerController' => $baseDir . '/app/Http/Controllers/Api/v1/customerController.php',
+=======
+>>>>>>> fca759a10cef188cb908207610d6796589921e8d
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
@@ -43,11 +50,17 @@ return array(
     'App\\Models\\Api\\v1\\Article_Supplier' => $baseDir . '/app/Models/Api/v1/Article_Supplier.php',
     'App\\Models\\Api\\v1\\Business' => $baseDir . '/app/Models/Api/v1/Business.php',
     'App\\Models\\Api\\v1\\Campus' => $baseDir . '/app/Models/Api/v1/Campus.php',
+<<<<<<< HEAD
+    'App\\Models\\Api\\v1\\CustomerBusiness' => $baseDir . '/app/Models/Api/v1/CustomerBusiness.php',
+    'App\\Models\\Api\\v1\\Customers' => $baseDir . '/app/Models/Api/v1/Customers.php',
+    'App\\Models\\Api\\v1\\DailyBox' => $baseDir . '/app/Models/Api/v1/DailyBox.php',
+=======
     'App\\Models\\Api\\v1\\CampusAmountControlBoxes' => $baseDir . '/app/Models/Api/v1/CampusAmountControlBoxes.php',
     'App\\Models\\Api\\v1\\CustomerBusiness' => $baseDir . '/app/Models/Api/v1/CustomerBusiness.php',
     'App\\Models\\Api\\v1\\Customers' => $baseDir . '/app/Models/Api/v1/Customers.php',
     'App\\Models\\Api\\v1\\DailyBox' => $baseDir . '/app/Models/Api/v1/DailyBox.php',
     'App\\Models\\Api\\v1\\DailyBoxCampusAmountControlBoxes' => $baseDir . '/app/Models/Api/v1/DailyBoxCampusAmountControlBoxes.php',
+>>>>>>> fca759a10cef188cb908207610d6796589921e8d
     'App\\Models\\Api\\v1\\HeaderInventoryLost' => $baseDir . '/app/Models/Api/v1/HeaderInventoryLost.php',
     'App\\Models\\Api\\v1\\Header_ticket' => $baseDir . '/app/Models/Api/v1/Header_ticket.php',
     'App\\Models\\Api\\v1\\Header_ticket_payment' => $baseDir . '/app/Models/Api/v1/Header_ticket_payment.php',

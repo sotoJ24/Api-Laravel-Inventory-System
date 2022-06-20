@@ -4,6 +4,7 @@ namespace App\Models\Api\v1;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Api\v1\Status;
 use App\Models\User;
 use App\Models\Api\v1\InventoryLostDetail;
 use App\Models\Api\v1\Campus;
@@ -14,12 +15,13 @@ class HeaderInventoryLost extends Model
     protected $fillable = ['date', //date
                            'user_id', //foreing
                            'campus_id',
-                           'status',
+                           'status_id',//foreing
                            'amount' //double
     ];
-    const Close = 0;
-    const Open = 1;
 
+    public function status(){
+        return $this->belongsTo(Status::class);
+    }
     public function user()
     {
         return $this->belongsTo(User::class);
