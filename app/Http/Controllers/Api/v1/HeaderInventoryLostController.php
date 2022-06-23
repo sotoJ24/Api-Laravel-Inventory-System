@@ -98,7 +98,7 @@ class HeaderInventoryLostController extends Controller
      * @param  \App\Models\Api\v1\HeaderInventoryLost  $headerInventoryLost
      * @return \Illuminate\Http\Response
      */
-    public function updateStatus(Request $request) //incompleto
+    public function updateStatus(Request $request)
     {
         $changeAmount = HeaderInventoryLost::find($request->header_id);
         $changeAmount->status_id = 5;
