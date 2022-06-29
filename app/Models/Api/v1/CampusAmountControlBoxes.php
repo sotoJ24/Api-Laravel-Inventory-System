@@ -4,7 +4,7 @@ namespace App\Models\Api\v1;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Api\v1\nameAmountControlBoxes;
+use App\Models\Api\v1\NameAmountControlBoxes;
 use App\Models\Api\v1\Campus;
 
 class CampusAmountControlBoxes extends Model
@@ -17,7 +17,7 @@ class CampusAmountControlBoxes extends Model
 
     public function BoxesCampusAmount()
     {
-        return $this->belongsTo(nameAmountControlBoxes::class);
+        return $this->belongsTo(NameAmountControlBoxes::class);
     }
 
     public function BoxesCampus()

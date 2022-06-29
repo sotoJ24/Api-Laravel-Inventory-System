@@ -10,8 +10,8 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
@@ -186,8 +186,8 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Whoops\\' => 
         array (
@@ -331,8 +331,8 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -523,10 +523,7 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         'App\\Http\\Controllers\\Api\\v1\\BusinessController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/BusinessController.php',
         'App\\Http\\Controllers\\Api\\v1\\CampusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CampusController.php',
         'App\\Http\\Controllers\\Api\\v1\\CustomerBusinessController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CustomerBusinessController.php',
-<<<<<<< HEAD
-=======
         'App\\Http\\Controllers\\Api\\v1\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/CustomerController.php',
->>>>>>> fca759a10cef188cb908207610d6796589921e8d
         'App\\Http\\Controllers\\Api\\v1\\DailyBoxController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/DailyBoxController.php',
         'App\\Http\\Controllers\\Api\\v1\\HeaderInventoryLostController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/HeaderInventoryLostController.php',
         'App\\Http\\Controllers\\Api\\v1\\HeaderTicketController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/HeaderTicketController.php',
@@ -538,13 +535,8 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         'App\\Http\\Controllers\\Api\\v1\\StatusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/StatusController.php',
         'App\\Http\\Controllers\\Api\\v1\\SupplierController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/SupplierController.php',
         'App\\Http\\Controllers\\Api\\v1\\TicketDetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/TicketDetailController.php',
-        'App\\Http\\Controllers\\Api\\v1\\TicketPaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/TicketPaymentController.php',
         'App\\Http\\Controllers\\Api\\v1\\UnitOfMeasureController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/UnitOfMeasureController.php',
         'App\\Http\\Controllers\\Api\\v1\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/UsersController.php',
-<<<<<<< HEAD
-        'App\\Http\\Controllers\\Api\\v1\\customerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/v1/customerController.php',
-=======
->>>>>>> fca759a10cef188cb908207610d6796589921e8d
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -557,34 +549,28 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Api\\v1\\AccountPayable' => __DIR__ . '/../..' . '/app/Models/Api/v1/AccountPayable.php',
         'App\\Models\\Api\\v1\\Article' => __DIR__ . '/../..' . '/app/Models/Api/v1/Article.php',
-        'App\\Models\\Api\\v1\\Article_Supplier' => __DIR__ . '/../..' . '/app/Models/Api/v1/Article_Supplier.php',
+        'App\\Models\\Api\\v1\\ArticleSupplier' => __DIR__ . '/../..' . '/app/Models/Api/v1/ArticleSupplier.php',
         'App\\Models\\Api\\v1\\Business' => __DIR__ . '/../..' . '/app/Models/Api/v1/Business.php',
         'App\\Models\\Api\\v1\\Campus' => __DIR__ . '/../..' . '/app/Models/Api/v1/Campus.php',
-<<<<<<< HEAD
-        'App\\Models\\Api\\v1\\CustomerBusiness' => __DIR__ . '/../..' . '/app/Models/Api/v1/CustomerBusiness.php',
-        'App\\Models\\Api\\v1\\Customers' => __DIR__ . '/../..' . '/app/Models/Api/v1/Customers.php',
-        'App\\Models\\Api\\v1\\DailyBox' => __DIR__ . '/../..' . '/app/Models/Api/v1/DailyBox.php',
-=======
         'App\\Models\\Api\\v1\\CampusAmountControlBoxes' => __DIR__ . '/../..' . '/app/Models/Api/v1/CampusAmountControlBoxes.php',
         'App\\Models\\Api\\v1\\CustomerBusiness' => __DIR__ . '/../..' . '/app/Models/Api/v1/CustomerBusiness.php',
         'App\\Models\\Api\\v1\\Customers' => __DIR__ . '/../..' . '/app/Models/Api/v1/Customers.php',
         'App\\Models\\Api\\v1\\DailyBox' => __DIR__ . '/../..' . '/app/Models/Api/v1/DailyBox.php',
         'App\\Models\\Api\\v1\\DailyBoxCampusAmountControlBoxes' => __DIR__ . '/../..' . '/app/Models/Api/v1/DailyBoxCampusAmountControlBoxes.php',
->>>>>>> fca759a10cef188cb908207610d6796589921e8d
         'App\\Models\\Api\\v1\\HeaderInventoryLost' => __DIR__ . '/../..' . '/app/Models/Api/v1/HeaderInventoryLost.php',
-        'App\\Models\\Api\\v1\\Header_ticket' => __DIR__ . '/../..' . '/app/Models/Api/v1/Header_ticket.php',
-        'App\\Models\\Api\\v1\\Header_ticket_payment' => __DIR__ . '/../..' . '/app/Models/Api/v1/Header_ticket_payment.php',
+        'App\\Models\\Api\\v1\\HeaderTicket' => __DIR__ . '/../..' . '/app/Models/Api/v1/HeaderTicket.php',
+        'App\\Models\\Api\\v1\\HeaderTicketPayment' => __DIR__ . '/../..' . '/app/Models/Api/v1/HeaderTicketPayment.php',
         'App\\Models\\Api\\v1\\InventoryLostDetail' => __DIR__ . '/../..' . '/app/Models/Api/v1/InventoryLostDetail.php',
         'App\\Models\\Api\\v1\\Invoicing' => __DIR__ . '/../..' . '/app/Models/Api/v1/Invoicing.php',
+        'App\\Models\\Api\\v1\\NameAmountControlBoxes' => __DIR__ . '/../..' . '/app/Models/Api/v1/NameAmountControlBoxes.php',
         'App\\Models\\Api\\v1\\PaymentsMethods' => __DIR__ . '/../..' . '/app/Models/Api/v1/PaymentsMethods.php',
         'App\\Models\\Api\\v1\\Reserved' => __DIR__ . '/../..' . '/app/Models/Api/v1/Reserved.php',
         'App\\Models\\Api\\v1\\Rol' => __DIR__ . '/../..' . '/app/Models/Api/v1/Rol.php',
         'App\\Models\\Api\\v1\\Root' => __DIR__ . '/../..' . '/app/Models/Api/v1/Root.php',
         'App\\Models\\Api\\v1\\Status' => __DIR__ . '/../..' . '/app/Models/Api/v1/Status.php',
         'App\\Models\\Api\\v1\\Supplier' => __DIR__ . '/../..' . '/app/Models/Api/v1/Supplier.php',
-        'App\\Models\\Api\\v1\\Ticket_detail' => __DIR__ . '/../..' . '/app/Models/Api/v1/Ticket_detail.php',
+        'App\\Models\\Api\\v1\\TicketDetail' => __DIR__ . '/../..' . '/app/Models/Api/v1/TicketDetail.php',
         'App\\Models\\Api\\v1\\UnitOfMeasure' => __DIR__ . '/../..' . '/app/Models/Api/v1/UnitOfMeasure.php',
-        'App\\Models\\Api\\v1\\nameAmountControlBoxes' => __DIR__ . '/../..' . '/app/Models/Api/v1/nameAmountControlBoxes.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -700,6 +686,7 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\NameAmountControlBoxesSeeder' => __DIR__ . '/../..' . '/database/seeders/NameAmountControlBoxesSeeder.php',
         'Database\\Seeders\\PaymentsMethodsSeeder' => __DIR__ . '/../..' . '/database/seeders/PaymentsMethodsSeeder.php',
         'Database\\Seeders\\RolsSeeder' => __DIR__ . '/../..' . '/database/seeders/RolsSeeder.php',
         'Database\\Seeders\\StatusSeeder' => __DIR__ . '/../..' . '/database/seeders/StatusSeeder.php',
@@ -3742,6 +3729,7 @@ class ComposerStaticInit94b34e6815d269dbc0596162ee1581ff
         'PHPUnit\\Util\\PHP\\DefaultPhpProcess' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/PHP/DefaultPhpProcess.php',
         'PHPUnit\\Util\\PHP\\WindowsPhpProcess' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/PHP/WindowsPhpProcess.php',
         'PHPUnit\\Util\\Printer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Printer.php',
+        'PHPUnit\\Util\\Reflection' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Reflection.php',
         'PHPUnit\\Util\\RegularExpression' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/RegularExpression.php',
         'PHPUnit\\Util\\Test' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Test.php',
         'PHPUnit\\Util\\TestDox\\CliTestDoxPrinter' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TestDox/CliTestDoxPrinter.php',

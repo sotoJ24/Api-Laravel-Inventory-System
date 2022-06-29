@@ -20,9 +20,11 @@ class CreateTicketDetailsTable extends Migration
             $table->double('salePrice');
             $table->double('subTotal');
             $table->unsignedBigInteger('headerTicket_id');
+            $table->unsignedBigInteger('statuses_id');
 
             $table->foreign('article_id')->references('id')->on('articles');
             $table->foreign('headerTicket_id')->references('id')->on('header_tickets');
+            $table->foreign('statuses_id')->references('id')->on('statuses');
             $table->timestamps();
         });
     }

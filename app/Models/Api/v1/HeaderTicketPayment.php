@@ -5,9 +5,9 @@ namespace App\Models\Api\v1;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\PaymentsMethods;
-use App\Models\Api\v1\Header_ticket;
+use App\Models\Api\v1\HeaderTicket;
 
-class Header_ticket_payment extends Model
+class HeaderTicketPayment extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -21,9 +21,9 @@ class Header_ticket_payment extends Model
         return $this->belongsTo(PaymentsMethods::class);
     }
 
-    public function HeadTiPayment()
+    public function HeaderTicketPayment()
     {
-        return $this->belongsTo(Header_ticket::class);
+        return $this->belongsTo(HeaderTicket::class);
     }
 
 }

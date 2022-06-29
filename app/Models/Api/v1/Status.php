@@ -11,9 +11,9 @@ use App\Models\Api\v1\CustomerBusiness;
 use App\Models\Api\v1\Supplier;
 use App\Models\Api\v1\Customers;
 use App\Models\Api\v1\DailyBox;
-use App\Models\Api\v1\Header_ticket;
+use App\Models\Api\v1\HeaderTicket;
+use App\Models\Api\v1\TicketDetail;
 use App\Models\User;
-use GuzzleHttp\Psr7\Header;
 
 class Status extends Model
 {
@@ -27,6 +27,11 @@ class Status extends Model
     public function statusBusiness()
     {
          return $this->hasmany(Business::class);
+    }
+
+    public function statusTicketDetail()
+    {
+         return $this->hasmany(TicketDetail::class);
     }
 
     public function statusCampus()
@@ -61,7 +66,7 @@ class Status extends Model
 
     public function statuTicketHeader()
     {
-         return $this->hasmany(Header_ticket::class);
+         return $this->hasmany(HeaderTicket::class);
     }
 }
 

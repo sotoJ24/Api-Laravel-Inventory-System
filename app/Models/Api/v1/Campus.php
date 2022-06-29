@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\Status;
 use App\Models\Api\v1\Business;
 use App\Models\Api\v1\DailyBox;
-use App\Models\Api\v1\Header_ticket;
+use App\Models\Api\v1\HeaderTicket;
 use App\Models\Api\v1\Article;
 use App\Models\User;
 use App\Models\Api\v1\CampusAmountControlBoxes;
@@ -46,7 +46,7 @@ class Campus extends Model
 
     public function CampusTicketsHeader()
     {
-        return $this->hasMany(Header_ticket::class);
+        return $this->hasMany(HeaderTicket::class);
     }
 
     public function campusAmountControlBoxes()

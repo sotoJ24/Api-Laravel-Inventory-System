@@ -32,8 +32,8 @@ class UsersController extends Controller
             'name' => 'required|string|max:72',
             'email' => 'required|string|max:96',
             'password' => 'required|string|max:30',
-            'IdRol' => 'required|numeric',
-            'campus_Id' => 'required|numeric',
+            'rol_id' => 'required|numeric',
+            'campus_id' => 'required|numeric',
             'statuses_id' => 'required|numeric'
         ]);
 

@@ -12,7 +12,7 @@ use App\Models\Api\v1\Status;
 use App\Models\Api\v1\Rol;
 use App\Models\Api\v1\Campus;
 use App\Models\Api\v1\DailyBox;
-use App\Models\Api\v1\Header_ticket;
+use App\Models\Api\v1\HeaderTicket;
 
 class User extends Authenticatable
 {
@@ -55,7 +55,7 @@ class User extends Authenticatable
 
     public function HeaderTicketUser()
     {
-        return $this->hasMany(Header_ticket::class);
+        return $this->hasMany(HeaderTicket::class);
     }
 
 

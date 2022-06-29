@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\CampusAmountControlBoxes;
 
-class nameAmountControlBoxes extends Model
+class NameAmountControlBoxes extends Model
 {
     use HasFactory;
     protected $fillable = [
