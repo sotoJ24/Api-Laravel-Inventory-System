@@ -38,5 +38,9 @@ class StatusSeeder extends Seeder
         $status6->name = "Cerrado";
         $status6->save();
 
+        $status7 = new Status();
+        $status7->name = "Anulado";
+        $status7->save();
+
     }
 }

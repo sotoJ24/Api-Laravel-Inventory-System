@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Api\v1\Campus;
-use App\Models\Api\v1\Header_ticket;
+use App\Models\Api\v1\HeaderTicket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -38,7 +38,7 @@ class HeaderTicketController extends Controller
 
     public function showAllHeaderByStatus($status)
     {
-        $headerTicket = Header_ticket::where('status_id',$status)->get();
+        $headerTicket = HeaderTicket::where('status_id',$status)->get();
         return response()->json($headerTicket,200);
     }
 
@@ -70,7 +70,7 @@ class HeaderTicketController extends Controller
         $headerTicket = null;
         if($validation)
         {
-            $headerTicket = Header_ticket::create($request->all());
+            $headerTicket = HeaderTicket::create($request->all());
             return response()->json($headerTicket,201);
         }
         return response()->json($headerTicket,417);
@@ -84,7 +84,7 @@ class HeaderTicketController extends Controller
      * @param  \App\Models\Api\v1\Header_ticket  $header_ticket
      * @return \Illuminate\Http\Response
      */
-    public function show(Header_ticket $header_ticket)
+    public function show(HeaderTicket $header_ticket)
     {
         //
     }
@@ -104,7 +104,7 @@ class HeaderTicketController extends Controller
 
         if($validation)
         {
-            $headerTicket=Header_ticket::findOrFail($id);
+            $headerTicket=HeaderTicket::findOrFail($id);
             $headerTicket->status_id=$request->status_id;
             $headerTicket->save();
             return response()->json($headerTicket,200);

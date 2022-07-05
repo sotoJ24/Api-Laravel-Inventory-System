@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Api\v1\Ticket_detail;
+use App\Models\Api\v1\Article;
+use App\Models\Api\v1\TicketDetail;
 use Illuminate\Http\Request;
-
+Use Illuminate\Support\Facades\DB;
 class TicketDetailController extends Controller
 {
     /**
@@ -28,34 +29,50 @@ class TicketDetailController extends Controller
     {
         // return$request->articleLosses[0]['salePrice'];
         $sizeArray = count($request->articleDetails);
-        for($index=0; $index<$sizeArray; $index++)
+        for ($index = 0; $index < $sizeArray; $index++)
         {
-        // Svalidation=$request->validate([
-        //$request->articleLosses[$index][header InventoryLost_id']=>'required numeric',
-        //$request->articleLosses[$index]['article_id']=>'required numeric',
-        //$request->articleLosses[$index]['salePrice']=>'required numeric',
-        //$request->article Losses[$index]['quantity']=>'required[numeric',
-        //$request->articleLosses[$index]['amount']=>'required|numeric',
-        //$request->articleLosses[$index]['observation']=>'required text
-        //]);
-        //$detail=null;
-        // if($validation){
-                $detail=new Ticket_detail;
-                $detail->article_id=$request->articleDetails[$index]['article_id'];
-                $detail->quantity= $request->articleDetails[$index]['quantity'];
-                $detail->salePrice=$request->articleDetails[$index]['salePrice'];
-                $detail->subTotal=$request->articleDetails[$index]['subTotal'];
-                $detail->headerTicket_id=$request->articleDetails[$index]['headerTicket_id'];
-                $detail->save();
+            // Svalidation=$request->validate([
+            //$request->articleLosses[$index][header InventoryLost_id']=>'required numeric',
+            //$request->articleLosses[$index]['article_id']=>'required numeric',
+            //$request->articleLosses[$index]['salePrice']=>'required numeric',
+            //$request->article Losses[$index]['quantity']=>'required[numeric',
+            //$request->articleLosses[$index]['amount']=>'required|numeric',
+            //$request->articleLosses[$index]['observation']=>'required text
+            //]);
+            //$detail=null;
+            // if($validation){
+            $detail = new TicketDetail;
+            $detail->article_id = $request->articleDetails[$index]['article_id'];
+            $detail->quantity = $request->articleDetails[$index]['quantity'];
+            $detail->salePrice = $request->articleDetails[$index]['salePrice'];
+            $detail->subTotal = $request->articleDetails[$index]['subTotal'];
+            $detail->headerTicket_id = $request->articleDetails[$index]['headerTicket_id'];
+            $detail->statuses_id = $request->articleDetails[$index]['statuses_id'];
+            $detail->save();
+            $decrease = DB::select('CALL updating_ticket_by_detail('.$detail->article_id.','.$detail->quantity.')');
             //}
         }
         //$detail=null;
         // if($validation){
-            // sdetail=InventoryLost Detail :: create($request->all());
-        return response()->json($detail,201);
+        // sdetail=InventoryLost Detail :: create($request->all());
+        return response()->json($detail, 201);
         //}
         //return response()->json($detail,417);
     }
+
+    public function increaseQuantityOfArticle($id)
+    {
+
+        // $canceledDetail = TicketDetail::where('statuses_id',7)->get();
+        // if($canceledDetail)
+        // {}
+
+        $ticketDetail = TicketDetail::where('statuses_id',7)->select('article_id','quantity')->get();
+        return response()->json($ticketDetail,200);
+        $detail = new TicketDetail;
+        $decrease = DB::select('CALL updating_ticket_by_detail_quantity('.$detail->article_id.','.$detail->quantity.')');
+    }
+
 
     /**
      * Display the specified resource.
@@ -63,9 +80,15 @@ class TicketDetailController extends Controller
      * @param  \App\Models\Api\v1\Ticket_detail  $ticket_detail
      * @return \Illuminate\Http\Response
      */
-    public function show(Ticket_detail $ticket_detail)
+    public function show($headerId)
     {
-        //
+        $details = DB::table('ticket_details')
+        ->join('articles','ticket_details.article_id', '=', 'articles.id')
+            ->select('articles.name', 'ticket_details.quantity', 'ticket_details.salePrice', 'ticket_details.subTotal')
+            ->where('ticket_details.headerTicket_id',$headerId)
+            ->get();
+        return response()->json($details, 200);
+
     }
 
     /**
@@ -75,7 +98,7 @@ class TicketDetailController extends Controller
      * @param  \App\Models\Api\v1\Ticket_detail  $ticket_detail
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ticket_detail $ticket_detail)
+    public function update(Request $request, TicketDetail $ticket_detail)
     {
         //
     }
@@ -86,8 +109,16 @@ class TicketDetailController extends Controller
      * @param  \App\Models\Api\v1\Ticket_detail  $ticket_detail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ticket_detail $ticket_detail)
+    public function destroy(Request $request, $id)
     {
-        //
+        $changeStatus = TicketDetail::find($id);
+        $changeStatus->statuses_id = $request->statuses_id;
+        if($changeStatus->save())
+        {
+            return response()->json("exito", 200);
+        }
+
     }
+
+
 }

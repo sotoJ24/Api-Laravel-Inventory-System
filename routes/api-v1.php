@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\v1\UsersController;
 use App\Http\Controllers\Api\v1\DailyBoxController;
 use App\Http\Controllers\Api\v1\HeaderTicketController;
 use App\Http\Controllers\Api\v1\TicketDetailController;
+use App\Http\Controllers\Api\v1\InventoryLostDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,11 @@ Route::get('headerTicket/DateAndCampus',[\App\Http\Controllers\Api\v1\HeaderTick
 
 //{{-- TicketDetail Routes --}}\\
 Route::apiResource('ticketDetail',TicketDetailController::class)->names('api.v1.tickedDetail');
+Route::get('ticketDetailAddQuantity',[\App\Http\Controllers\Api\v1\TicketDetailController::class,'increaseQuantityOfArticle'])->name('api.v1.tickedDetail.addQuantity');
 
 //{{-- Super User Routes --}}\\
 Route::apiResource('roots', RootController::class)->names('api.v1.roots');
+
+//{{-- InventoryLostDetail Routes --}}\\
+Route::apiResource('InventoryLostDetail',InventoryLostDetailController::class)->names('api.v1.inventoryLostDetail');
+

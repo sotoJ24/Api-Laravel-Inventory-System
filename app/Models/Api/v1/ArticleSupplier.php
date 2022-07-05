@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\Article;
 // use App\Models\Api\v1\Supplier;
 
-class Article_Supplier extends Model
+class ArticleSupplier extends Model
 {
     use HasFactory;
     protected $fillable = [//'supplier_id', //Foreing

@@ -24,7 +24,6 @@ class CreateDailyBoxesTable extends Migration
             $table->time('closingTime')->nullable();
             $table->text('observations')->nullable();
             $table->unsignedBigInteger('statuses_id');
-            
             $table->foreign('statuses_id')->references('id')->on('statuses');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('campus_id')->references('id')->on('campuses');

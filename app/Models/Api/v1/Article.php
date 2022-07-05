@@ -5,10 +5,10 @@ namespace App\Models\Api\v1;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Api\v1\Article_Supplier;
+use App\Models\Api\v1\ArticleSupplier;
 use App\Models\Api\v1\UnitOfMeasure;
 use App\Models\Api\v1\InventoryLosse;
-use App\Models\Api\v1\Ticket_detail;
+use App\Models\Api\v1\TicketDetail;
 use App\Models\Api\v1\Campus;
 
 class Article extends Model
@@ -38,7 +38,7 @@ class Article extends Model
     }
 
     public function articleSupplier(){
-        return $this->hasMany(Article_Supplier::class);
+        return $this->hasMany(ArticleSupplier::class);
     }
 
     public function inventoryLostDetail(){
@@ -46,6 +46,6 @@ class Article extends Model
     }
 
     public function ticketDetail(){
-        return $this->belongsTo(Ticket_detail::class);
+        return $this->belongsTo(TicketDetail::class);
     }
 }
