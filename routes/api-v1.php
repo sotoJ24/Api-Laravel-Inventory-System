@@ -75,7 +75,7 @@ Route::get('headerTicket/DateAndCampus',[\App\Http\Controllers\Api\v1\HeaderTick
 
 //{{-- TicketDetail Routes --}}\\
 Route::apiResource('ticketDetail',TicketDetailController::class)->names('api.v1.tickedDetail');
-Route::get('ticketDetail/increaseQuantityOfArticle/{id}',[\App\Http\Controllers\Api\v1\TicketDetailController::class,'increaseQuantityOfArticle'])->name('api.v1.tickedDetail.addQuantity');
+Route::get('ticketDetailAddQuantity',[\App\Http\Controllers\Api\v1\TicketDetailController::class,'increaseQuantityOfArticle'])->name('api.v1.tickedDetail.addQuantity');
 
 //{{-- Super User Routes --}}\\
 Route::apiResource('roots', RootController::class)->names('api.v1.roots');

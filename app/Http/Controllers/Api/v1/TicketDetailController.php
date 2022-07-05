@@ -66,13 +66,11 @@ class TicketDetailController extends Controller
         // $canceledDetail = TicketDetail::where('statuses_id',7)->get();
         // if($canceledDetail)
         // {}
-        $ticketDetail = TicketDetail::where('id',$id)->get();
-        $articles = Article::where('id',$ticketDetail[0]['article_id'])->select('name','stock')->get();
-        return response()->json($articles,200);
 
+        $ticketDetail = TicketDetail::where('statuses_id',7)->select('article_id','quantity')->get();
+        return response()->json($ticketDetail,200);
         $detail = new TicketDetail;
         $decrease = DB::select('CALL updating_ticket_by_detail_quantity('.$detail->article_id.','.$detail->quantity.')');
-
     }
 
 
@@ -115,8 +113,11 @@ class TicketDetailController extends Controller
     {
         $changeStatus = TicketDetail::find($id);
         $changeStatus->statuses_id = $request->statuses_id;
-        $changeStatus->save();
-        return response()->json($changeStatus, 200);
+        if($changeStatus->save())
+        {
+            return response()->json("exito", 200);
+        }
+
     }
 
 
