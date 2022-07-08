@@ -17,17 +17,16 @@ class HeaderTicket extends Model
     use HasFactory;
     protected $fillable = [
                 'consecutive',
-                'Date',
-                'NumberDocumentPay',
+                'date',
                 'customers_id', //FK
                 'user_id', //FK
                 'campus_id',//FK
                 'status_id',//FK
                 'dailyBox_id',
                 'subTotal',
-                'IVA',
-                'Discount',
-                'Total'
+                'iva',
+                'discount',
+                'total'
     ];
 
     public function CustomerHeader()

@@ -23,7 +23,7 @@ class CreateStoreProcedureUpdateStockByInventoryLost extends Migration
             commit;
             END;$$";
 
-        \DB::unprepared($procedure);
+        DB::unprepared($procedure);
     }
 
     /**

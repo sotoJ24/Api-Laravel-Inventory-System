@@ -28,9 +28,9 @@ class HeaderTicketController extends Controller
               ->join('campuses','header_tickets.campus_id','=','campuses.id')
               ->join('statuses','header_tickets.status_id','=','statuses.id')
               ->join('daily_boxes','header_tickets.dailyBox_id','=','daily_boxes.id')
-              ->select('header_tickets.id','header_tickets.consecutive', 'header_tickets.Date', 'header_tickets.NumberDocumentPay', 'customers.identifier as customerIdentifier', 'users.name as userName', 'campuses.name as campusName', 'statuses.name as status','daily_boxes.openingDate as dailyBoxDate','header_tickets.subTotal','header_tickets.IVA', 'header_tickets.IVA', 'header_tickets.Discount','header_tickets.Total')
+              ->select('header_tickets.id','header_tickets.consecutive', 'header_tickets.date', 'customers.identifier as customerIdentifier', 'users.name as userName', 'campuses.name as campusName', 'statuses.name as status','daily_boxes.openingDate as dailyBoxDate','header_tickets.subTotal', 'header_tickets.iva', 'header_tickets.discount','header_tickets.total')
               ->where('header_tickets.campus_id',$request->campus)
-              ->whereBetween('Date',[$request->from, $request->until])
+              ->whereBetween('date',[$request->from, $request->until])
               ->get();
         return response()->json($headerTicket,200);
     }
@@ -54,17 +54,16 @@ class HeaderTicketController extends Controller
     {
         $validation = $request->validate([
             'consecutive' => 'required|numeric',
-            'Date' => 'required|date',
-            'NumberDocumentPay' => 'required|numeric',
+            'date' => 'required|date',
             'customers_id' => 'required|numeric',
             'user_id' => 'required|numeric',
             'campus_id' => 'required|numeric',
             'status_id' => 'required|numeric',
             'dailyBox_id' => 'required|numeric',
             'subTotal' => 'required|numeric',
-            'IVA' => 'required|numeric',
-            'Discount' => 'required|numeric',
-            'Total' => 'required|numeric'
+            'iva' => 'required|numeric',
+            'discount' => 'required|numeric',
+            'total' => 'required|numeric'
         ]);
 
         $headerTicket = null;
