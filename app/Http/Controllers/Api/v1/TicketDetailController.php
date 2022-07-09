@@ -60,19 +60,6 @@ class TicketDetailController extends Controller
         //return response()->json($detail,417);
     }
 
-    public function increaseQuantityOfArticle($id)
-    {
-
-        // $canceledDetail = TicketDetail::where('statuses_id',7)->get();
-        // if($canceledDetail)
-        // {}
-
-        $ticketDetail = TicketDetail::where('statuses_id',7)->select('article_id','quantity')->get();
-        return response()->json($ticketDetail,200);
-        $detail = new TicketDetail;
-        $decrease = DB::select('CALL updating_ticket_by_detail_quantity('.$detail->article_id.','.$detail->quantity.')');
-    }
-
 
     /**
      * Display the specified resource.

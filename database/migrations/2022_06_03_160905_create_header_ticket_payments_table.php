@@ -17,6 +17,7 @@ class CreateHeaderTicketPaymentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('paymentsMethods_id');
             $table->unsignedBigInteger('header_tickets_id');
+            $table->integer('numberDocumentPay')->nullable();
             $table->double('amount');
             $table->timestamps();
 

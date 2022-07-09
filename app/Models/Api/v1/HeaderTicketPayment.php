@@ -13,6 +13,7 @@ class HeaderTicketPayment extends Model
     protected $fillable = [
         'paymentsMethods_id',
         'headerticket_id',
+        'numberDocumentPay',
         'amount'
     ];
 
