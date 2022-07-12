@@ -111,6 +111,6 @@ class CustomerController extends Controller
         $changeStatus = Customers::find($id);
         $changeStatus->statuses_id = $request->statuses_id;
         $changeStatus->save();
-        return response()->json($changeStatus, 200);
+        return response()->json($changeStatus,200);
     }
 }

@@ -97,9 +97,15 @@ class HeaderTicketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validation = $request->validate([
-            'status_id' => 'required|numeric'
-        ]);
+        if($request['status_id'] == 4)
+        {
+            $validation = $request->validate([
+                'status_id' => 'required|numeric|'
+            ]);
+
+        }else{
+            return "The status only can be change in 4";
+        }
 
         if($validation)
         {
@@ -110,7 +116,11 @@ class HeaderTicketController extends Controller
         }
         return response()->json([],406);
 
+
     }
+
+
+
 
     /**
      * Remove the specified resource from storage.

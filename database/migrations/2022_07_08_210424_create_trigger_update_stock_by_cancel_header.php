@@ -15,7 +15,7 @@ class CreateTriggerUpdateStockByCancelHeader extends Migration
     public function up()
     {
         DB::unprepared('
-            CREATE TRIGGER trigger_increases_quantity_articles AFTER UPDATE ON header_tickets FOR EACH ROW
+            CREATE TRIGGER trigger_increases_quantity_articles AFTER UPDATE OF status_id ON header_tickets FOR EACH ROW
 
             EXECUTE PROCEDURE trigger_increases_quantity_articles();
         ');
@@ -28,6 +28,6 @@ class CreateTriggerUpdateStockByCancelHeader extends Migration
      */
     public function down()
     {
-        DB::unprepared('DROP TRIGGER `trigger_update_stock_by_cancel_header`');
+        DB::unprepared('DROP TRIGGER `trigger_increases_quantity_articles`');
     }
 }
