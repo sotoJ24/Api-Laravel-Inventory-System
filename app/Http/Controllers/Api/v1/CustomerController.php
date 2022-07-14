@@ -16,13 +16,13 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customers::where('statuses_id',4)->get();
-        return response()->json($customers,200);
+
+
     }
 
-    public function InactiveCustomers()
+    public function showByStatus($status)
     {
-        $customers = Customers::where('statuses_id',5)->get();
+        $customers = Customers::where('statuses_id',$status)->get();
         return response()->json($customers,200);
     }
 
