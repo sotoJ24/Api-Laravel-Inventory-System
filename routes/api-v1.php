@@ -60,7 +60,11 @@ Route::apiResource('customers',CustomerController::class)->names('api.v1.custome
 Route::get('customersInactive/{customer}',[\App\Http\Controllers\Api\v1\CustomerController::class,'InactiveCustomers'])->name('api.v1.customers.inactive');
 
 //{{-- Users Routes --}}\\
-Route::apiResource('users',UsersController::class)->names('api.v1.users');
+//Route::apiResource('users',UsersController::class)->names('api.v1.users');
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+Route::post('/register', [UsersController::class, 'store'])->name('api.v1.users');
 
 //{{-- DailyBox Routes --}}\\
 Route::apiResource('dailybox',DailyBoxController::class)->names('api.v1.dailybox');
