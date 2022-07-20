@@ -59,6 +59,7 @@ return array(
     'App\\Models\\Api\\v1\\Root' => $baseDir . '/app/Models/Api/v1/Root.php',
     'App\\Models\\Api\\v1\\Status' => $baseDir . '/app/Models/Api/v1/Status.php',
     'App\\Models\\Api\\v1\\Supplier' => $baseDir . '/app/Models/Api/v1/Supplier.php',
+    'App\\Models\\Api\\v1\\TaxRateAndCode' => $baseDir . '/app/Models/Api/v1/TaxRateAndCode.php',
     'App\\Models\\Api\\v1\\TicketDetail' => $baseDir . '/app/Models/Api/v1/TicketDetail.php',
     'App\\Models\\Api\\v1\\UnitOfMeasure' => $baseDir . '/app/Models/Api/v1/UnitOfMeasure.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',

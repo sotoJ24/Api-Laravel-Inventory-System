@@ -19,7 +19,8 @@ class ArticleController extends Controller
         $articles = DB::table('articles')
             ->join('unit_of_measures','articles.unitOfMeasure_id','=','unit_of_measures.id')
             ->join('campuses','articles.campuses_id','=','campuses.id')
-            ->select('unit_of_measures.description','campuses.name','articles.id','articles.barcode', 'articles.name', 'articles.purchasePrice','articles.salePrice','articles.stock','articles.minimumStock')
+            ->join('tax_rate_and_codes', 'articles.taxRate_id', '=', 'tax_rate_and_codes.id')
+            ->select('unit_of_measures.description','campuses.name','articles.id','articles.barcode', 'articles.name', 'articles.purchasePrice','articles.salePrice','articles.stock','articles.minimumStock', 'tax_rate_and_codes.percentage')
             ->where('articles.states',1)->orderBy('articles.name', 'ASC')
             ->get();
         return response()->json($articles,200);
@@ -41,7 +42,8 @@ class ArticleController extends Controller
             'purchasePrice' => 'required|numeric',
             'salePrice' => 'required|numeric',
             'stock' => 'required|numeric',
-            'minimumStock' => 'required|numeric'
+            'minimumStock' => 'required|numeric',
+            'taxRate_id'=> 'required|numeric|integer'
         ]);
         $article = null;
         if($validation){

@@ -25,10 +25,12 @@ class CreateArticlesTable extends Migration
             $table->enum('states',[Article::Enable, Article::Disable])->default(Article::Enable);
             $table->double('stock',15,4);
             $table->double('minimumStock',15,4);
+            $table->unsignedBigInteger('taxRate_id');
             $table->timestamps();
        //Foreing keys
             $table->foreign('unitOfMeasure_id')->references('id')->on('unit_of_measures');
             $table->foreign('campuses_id')->references('id')->on('campuses');
+            $table->foreign('taxRate_id')->references('id')->on('tax_rate_and_codes');
         });
     }
 
