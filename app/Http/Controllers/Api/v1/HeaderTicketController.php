@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1;
 
+use App\Http\Traits\Api\v1\traitTicket;
 use App\Http\Controllers\Controller;
 use App\Models\Api\v1\Campus;
 use App\Models\Api\v1\HeaderTicket;
@@ -15,6 +16,8 @@ class HeaderTicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    use traitTicket;
+
     public function index()
     {
 
@@ -38,7 +41,14 @@ class HeaderTicketController extends Controller
                   return response()->json($headerTicket,200);
                 }
                 else{
-                    $headerTicket = DB::table('header_tickets')
+                    $show = self::showCampusHeaderTicketByDateRangesAndStatus($request,$status);
+                    return $show;
+               }
+    }
+
+    public function showCampusHeaderTicketByDateRangesAndStatus($request,$status)
+    {
+        $headerTicket = DB::table('header_tickets')
                     ->join('customers','header_tickets.customers_id','=','customers.id')
                     ->join('users','header_tickets.user_id','=','users.id')
                     ->join('campuses','header_tickets.campus_id','=','campuses.id')
@@ -50,8 +60,8 @@ class HeaderTicketController extends Controller
                     ->whereBetween('date',[$request->from, $request->until])
                     ->get();
                     return response()->json($headerTicket,200);
-               }
     }
+
 
 
     public function showByStatus($status)
@@ -78,10 +88,11 @@ class HeaderTicketController extends Controller
             'status_id' => 'required|numeric',
             'dailyBox_id' => 'required|numeric',
             'subTotal' => 'required|numeric',
-            'iva' => 'required|numeric',
-            'discount' => 'required|numeric',
+            'iva' => 'numeric',
+            'discount' => 'numeric',
             'total' => 'required|numeric'
         ]);
+
 
         $headerTicket = null;
         if($validation)
@@ -112,23 +123,9 @@ class HeaderTicketController extends Controller
      * @param  \App\Models\Api\v1\Header_ticket  $header_ticket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
 
-        $validation = $request->validate([
-            'subTotal' => 'required|numeric',
-            'total' => 'required|numeric'
-        ]);
-
-        if($validation)
-        {
-            $headerTicket=HeaderTicket::findOrFail($id);
-            $headerTicket->subTotal=$request->subTotal;
-            $headerTicket->total=$request->total;
-            $headerTicket->save();
-            return response()->json($headerTicket,200);
-        }
-        return response()->json([],406);
 
     }
 
@@ -153,9 +150,6 @@ class HeaderTicketController extends Controller
         }
         return response()->json([],406);
     }
-
-
-
 
 
     /**

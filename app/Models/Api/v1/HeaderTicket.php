@@ -2,6 +2,7 @@
 
 namespace App\Models\Api\v1;
 
+use App\Http\Traits\Api\v1\traitTicket;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Api\v1\Customers;
@@ -14,7 +15,7 @@ use App\Models\User;
 
 class HeaderTicket extends Model
 {
-    use HasFactory;
+    use HasFactory,traitTicket;
     protected $fillable = [
                 'consecutive',
                 'date',
