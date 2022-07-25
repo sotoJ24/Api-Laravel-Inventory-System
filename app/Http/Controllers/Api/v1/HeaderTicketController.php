@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1;
 
+use App\Http\Traits\Api\v1\traitTicket;
 use App\Http\Controllers\Controller;
 use App\Models\Api\v1\Campus;
 use App\Models\Api\v1\HeaderTicket;
@@ -15,33 +16,59 @@ class HeaderTicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    use traitTicket;
+
     public function index()
     {
 
     }
 
 
-    public function searchCampusHeaderTicketByDateRanges(Request $request){
-        $headerTicket = DB::table('header_tickets')
-              ->join('customers','header_tickets.customers_id','=','customers.id')
-              ->join('users','header_tickets.user_id','=','users.id')
-              ->join('campuses','header_tickets.campus_id','=','campuses.id')
-              ->join('statuses','header_tickets.status_id','=','statuses.id')
-              ->join('daily_boxes','header_tickets.dailyBox_id','=','daily_boxes.id')
-              ->select('header_tickets.id','header_tickets.consecutive', 'header_tickets.date', 'customers.identifier as customerIdentifier', 'users.name as userName', 'campuses.name as campusName', 'statuses.name as status','daily_boxes.openingDate as dailyBoxDate','header_tickets.subTotal', 'header_tickets.iva', 'header_tickets.discount','header_tickets.total')
-              ->where('header_tickets.campus_id',$request->campus)
-              ->whereBetween('date',[$request->from, $request->until])
-              ->get();
-        return response()->json($headerTicket,200);
+    public function searchCampusHeaderTicketByDateRanges(Request $request, $status){
+
+            $headerTicket = DB::table('header_tickets')
+                ->join('customers','header_tickets.customers_id','=','customers.id')
+                ->join('users','header_tickets.user_id','=','users.id')
+                ->join('campuses','header_tickets.campus_id','=','campuses.id')
+                ->join('statuses','header_tickets.status_id','=','statuses.id')
+                ->join('daily_boxes','header_tickets.dailyBox_id','=','daily_boxes.id')
+                ->select('header_tickets.id','header_tickets.consecutive', 'header_tickets.date', 'customers.identifier as customerIdentifier', 'users.name as userName', 'campuses.name as campusName', 'statuses.name as status','daily_boxes.openingDate as dailyBoxDate','header_tickets.subTotal', 'header_tickets.iva', 'header_tickets.discount','header_tickets.total')
+                ->where('header_tickets.campus_id',$request->campus)
+                ->whereBetween('date',[$request->from, $request->until])
+                ->get();
+                if($status == 0)
+                {
+                  return response()->json($headerTicket,200);
+                }
+                else{
+                    $show = self::showCampusHeaderTicketByDateRangesAndStatus($request,$status);
+                    return $show;
+               }
     }
 
-
-    public function showAllHeaderByStatus($status)
+    public function showCampusHeaderTicketByDateRangesAndStatus($request,$status)
     {
-        $headerTicket = HeaderTicket::where('status_id',$status)->get();
-        return response()->json($headerTicket,200);
+        $headerTicket = DB::table('header_tickets')
+                    ->join('customers','header_tickets.customers_id','=','customers.id')
+                    ->join('users','header_tickets.user_id','=','users.id')
+                    ->join('campuses','header_tickets.campus_id','=','campuses.id')
+                    ->join('statuses','header_tickets.status_id','=','statuses.id')
+                    ->join('daily_boxes','header_tickets.dailyBox_id','=','daily_boxes.id')
+                    ->select('header_tickets.id','header_tickets.consecutive', 'header_tickets.date', 'customers.identifier as customerIdentifier', 'users.name as userName', 'campuses.name as campusName', 'statuses.name as status','daily_boxes.openingDate as dailyBoxDate','header_tickets.subTotal', 'header_tickets.iva', 'header_tickets.discount','header_tickets.total')
+                    ->where('header_tickets.campus_id',$request->campus)
+                    ->where('status_id',$status)
+                    ->whereBetween('date',[$request->from, $request->until])
+                    ->get();
+                    return response()->json($headerTicket,200);
     }
 
+
+
+    public function showByStatus($status)
+    {
+        $customers = HeaderTicket::where('statuses_id',$status)->get();
+        return response()->json($customers,200);
+    }
 
 
     /**
@@ -61,10 +88,11 @@ class HeaderTicketController extends Controller
             'status_id' => 'required|numeric',
             'dailyBox_id' => 'required|numeric',
             'subTotal' => 'required|numeric',
-            'iva' => 'required|numeric',
-            'discount' => 'required|numeric',
+            'iva' => 'numeric',
+            'discount' => 'numeric',
             'total' => 'required|numeric'
         ]);
+
 
         $headerTicket = null;
         if($validation)
@@ -95,11 +123,23 @@ class HeaderTicketController extends Controller
      * @param  \App\Models\Api\v1\Header_ticket  $header_ticket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
-        $validation = $request->validate([
-            'status_id' => 'required|numeric'
-        ]);
+
+
+    }
+
+    public function changeStatus(Request $request, $id)
+    {
+        if($request['status_id'] == 5)
+        {
+            $validation = $request->validate([
+                'status_id' => 'required|numeric'
+            ]);
+
+        }else{
+            return response()->json(['message'=>'The status only can be change in status 5'],404);;
+        }
 
         if($validation)
         {
@@ -109,8 +149,8 @@ class HeaderTicketController extends Controller
             return response()->json($headerTicket,200);
         }
         return response()->json([],406);
-
     }
+
 
     /**
      * Remove the specified resource from storage.

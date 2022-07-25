@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Api\v1;
-
+use App\Http\Traits\Api\v1\traitTicket;
 use App\Http\Controllers\Controller;
 use App\Models\Api\v1\Article;
 use App\Models\Api\v1\TicketDetail;
 use Illuminate\Http\Request;
 Use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Api\v1\HeaderTicketController;
 class TicketDetailController extends Controller
 {
     /**
@@ -14,6 +15,7 @@ class TicketDetailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    use traitTicket;
     public function index()
     {
 
@@ -55,7 +57,13 @@ class TicketDetailController extends Controller
         //$detail=null;
         // if($validation){
         // sdetail=InventoryLost Detail :: create($request->all());
-        return response()->json($detail, 201);
+
+        // $HeaderTicket = new HeaderTicketController();
+        // $HeaderTicket->increaseConsecutiveCampus($request->headerDetails);
+        $counta = 1;
+        $traitTicket1 =  $this->increaseConsecutiveCampus($request->headerDetails,$counta);
+        return $traitTicket1;
+        // return response()->json($traitTicket, 201);
         //}
         //return response()->json($detail,417);
     }

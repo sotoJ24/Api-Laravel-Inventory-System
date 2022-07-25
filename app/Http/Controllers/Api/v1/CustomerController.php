@@ -16,13 +16,13 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customers::where('statuses_id',4)->get();
-        return response()->json($customers,200);
+
+
     }
 
-    public function InactiveCustomers()
+    public function showByStatus($status)
     {
-        $customers = Customers::where('statuses_id',5)->get();
+        $customers = Customers::where('statuses_id',$status)->get();
         return response()->json($customers,200);
     }
 
@@ -111,6 +111,6 @@ class CustomerController extends Controller
         $changeStatus = Customers::find($id);
         $changeStatus->statuses_id = $request->statuses_id;
         $changeStatus->save();
-        return response()->json($changeStatus, 200);
+        return response()->json($changeStatus,200);
     }
 }

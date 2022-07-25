@@ -24,7 +24,7 @@ class CreateHeaderTicketsTable extends Migration
             $table->unsignedBigInteger('status_id');
             $table->unsignedBigInteger('dailyBox_id');
             $table->double('subTotal');
-            $table->double('iva');
+            $table->double('iva')->nullable();
             $table->double('discount')->nullable();
             $table->double('total');
             //FK

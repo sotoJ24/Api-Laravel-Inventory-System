@@ -57,7 +57,7 @@ Route::apiResource('suppliers',SupplierController::class)->names('api.v1.supplie
 
 //{{-- Customer Routes --}}\\
 Route::apiResource('customers',CustomerController::class)->names('api.v1.customers');
-Route::get('customersInactive/{customer}',[\App\Http\Controllers\Api\v1\CustomerController::class,'InactiveCustomers'])->name('api.v1.customers.inactive');
+Route::get('customersByStatus/{customer}',[\App\Http\Controllers\Api\v1\CustomerController::class,'showByStatus'])->name('api.v1.customers.showByStatus');
 
 //{{-- Users Routes --}}\\
 Route::apiResource('users',UsersController::class)->names('api.v1.users');
@@ -69,9 +69,10 @@ Route::get('dailyboxDate',[\App\Http\Controllers\Api\v1\DailyBoxController::clas
 
 //{{-- HeaderTicket Routes --}}\\
 Route::apiResource('headerticket',HeaderTicketController::class)->names('api.v1.headerticket');
-Route::get('headerticket/statusHeader/{statusHeader}',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'showAllHeaderByStatus'])->name('api.v1.headerTicket.status');
-Route::get('headerTicketDate',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'lookingDate'])->name('api.v1.headerTicket.date');
-Route::get('headerTicket/DateAndCampus',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'searchCampusHeaderTicketByDateRanges'])->name('api.v1.headerTicket.showCampusAndDate');
+Route::get('headerticket/statusHeader/{statusHeader}',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'showAllHeaderByStatus'])->name('api.v1.headerticket.status');
+Route::get('headerTicketDate',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'lookingDate'])->name('api.v1.headerticket.date');
+Route::get('headerTicket/DateAndCampus/{DateAndCampus}',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'searchCampusHeaderTicketByDateRanges'])->name('api.v1.headerticket.showCampusAndDate');
+Route::put('headerTicket/changeStatus/{statusHeader}',[\App\Http\Controllers\Api\v1\HeaderTicketController::class,'changeStatus'])->name('api.v1.headerticket.changeStatus');
 
 //{{-- TicketDetail Routes --}}\\
 Route::apiResource('ticketDetail',TicketDetailController::class)->names('api.v1.tickedDetail');
