@@ -28,6 +28,6 @@ class CreateTriggerUpdateStockByCancelHeader extends Migration
      */
     public function down()
     {
-        DB::unprepared('DROP TRIGGER `trigger_increases_quantity_articles`');
+        //   DB::unprepared('DROP TRIGGER `trigger_increases_quantity_articles`');
     }
 }

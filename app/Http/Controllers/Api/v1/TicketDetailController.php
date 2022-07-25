@@ -61,12 +61,8 @@ class TicketDetailController extends Controller
         // $HeaderTicket = new HeaderTicketController();
         // $HeaderTicket->increaseConsecutiveCampus($request->headerDetails);
         $counta = 1;
-        $value = 0;
         $traitTicket1 =  $this->increaseConsecutiveCampus($request->headerDetails,$counta);
-        $traitTicket2 =  $this->increaseConsecutiveHeaderTicketTrait($value,$request->headerDetails,$counta);
-        $traitTicket3 =  $this->updateHeaderTicket($request->headerDetails,$counta);
-        $total = $traitTicket1.$traitTicket2.$traitTicket3;
-        return $total;
+        return $traitTicket1;
         // return response()->json($traitTicket, 201);
         //}
         //return response()->json($detail,417);

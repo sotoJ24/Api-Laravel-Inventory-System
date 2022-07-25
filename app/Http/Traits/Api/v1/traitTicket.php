@@ -7,18 +7,18 @@ use Illuminate\Support\Facades\DB;
 
 trait traitTicket{
 
-    public $count = 0;
+    protected $count = 1;
     public function increaseConsecutiveCampus($headerDetails,$counta)
     {
 
        $consecutive = DB::table('campuses')
-        ->where('id',$headerDetails[0]['campus_id'])
-        ->first('consecutive');
+        ->select('consecutive')
+        ->where('id',$headerDetails[0]['campus_id'])->first();
         $next = (integer)$consecutive->consecutive + 1;
         // $selectConsecutive = DB::table('campuses')->where('id',$campusId)->select('consecutive')->get();
-        DB::table('campuses')->where('id', $headerDetails)->update(['consecutive' => $next]);
+        DB::table('campuses')->where('id', $headerDetails[0]['campus_id'])->update(['consecutive' => $next]);
         // return response()->json(['The increase consecutive is'=>$next],201);
-        $counta = (integer)$counta+1;
+        $this->count = (integer)$this->count+$counta;
         $this->increaseConsecutiveHeaderTicketTrait($next,$headerDetails,$counta);
         return $this->count;
 
@@ -29,7 +29,7 @@ trait traitTicket{
         $consecutiveHeader = HeaderTicket::findOrFail($headerDetails[0]['headerTicket_id']);
         $consecutiveHeader->consecutive = $next;
         $consecutiveHeader->save();
-        $this->count = (integer)$counta+1;
+        $this->count = (integer)$this->count+$counta;
         $this->updateHeaderTicket($headerDetails,$counta);
         return $this->count;
 
@@ -52,7 +52,7 @@ trait traitTicket{
             $headerTicket->iva=$headerDetails[0]['iva'];
             $headerTicket->discount=$headerDetails[0]['discount'];
             $headerTicket->save();
-            $this->count = (integer)$counta+1;
+            $this->count = (integer)$this->count+$counta;
             return $this->count;
 
 
