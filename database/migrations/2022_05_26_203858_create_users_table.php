@@ -16,9 +16,9 @@ class CreateUsersTable extends Migration
         //campo de rol, mandarlo tostado, validar que solo sea 1-2 para crear
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name',72);
-            $table->string('email',96);
-            $table->string('password',30);
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
             $table->unsignedBigInteger('rol_id');
             $table->unsignedBigInteger('campus_id');
             $table->unsignedBigInteger('statuses_id');

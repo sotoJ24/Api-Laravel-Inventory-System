@@ -23,6 +23,7 @@ class Article extends Model
                            'states',          // enum
                            'stock',          //double
                            'minimumStock',  //double
+                           'taxRate_id'    //Foreing_key
     ];
     const Enable = 1;
     const Disable = 0;
@@ -47,5 +48,9 @@ class Article extends Model
 
     public function ticketDetail(){
         return $this->belongsTo(TicketDetail::class);
+    }
+
+    public function taxRadeAndCodes(){
+        return $this->belongsTo(TaxRateAndCode::class);
     }
 }
